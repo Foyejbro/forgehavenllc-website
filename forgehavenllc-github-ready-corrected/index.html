@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forge Haven LLC | Multi-Sector Business & Operations</title>
+  <meta name="description" content="Forge Haven LLC is a multi-sector operating company spanning technology, commerce, creative, and property services.">
+  <link rel="canonical" href="https://forgehavenllc.org/">
+
+  <!-- ===== FAVICON / SEARCH PREVIEW ===== -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:title" content="Forge Haven">
+  <meta property="og:description" content="Forge Haven LLC operates across technology, commerce, creative, and property services under one platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://forgehavenllc.org/images/brand/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://forgehavenllc.org/">
+
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forge Haven">
+  <meta name="twitter:description" content="Forge Haven LLC operates across technology, commerce, creative, and property services under one platform.">
+  <meta name="twitter:image" content="https://forgehavenllc.org/images/brand/og-image.png">
+
+  <!-- ===== SCHEMA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Forge Haven LLC",
+    "url": "https://forgehavenllc.org/",
+    "logo": "https://forgehavenllc.org/images/brand/og-image.png"
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- WATER CANVAS -->
+  <canvas id="waterCanvas"></canvas>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-box">
+      <div class="loader-title">Forge Haven</div>
+      <div class="loader-ring"></div>
+      <div class="loader-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="loader-text">Loading experience…</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" aria-label="Forge Haven Home">
+        <img src="images/brand/logo.png" alt="Forge Haven" class="logo-img">
+      </a>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav" id="navMenu">
+      <a href="#home" class="active">Home</a>
+      <a href="#sectors">Sectors</a>
+      <a href="services.html">Capabilities</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div class="maintenance-banner">
+        <span class="maintenance-dot"></span>
+        <span class="maintenance-text">Forge Haven LLC • Multi-Sector Operations</span>
+      </div>
+
+      <h1>One Company. Multiple Sectors. Built to Deliver.</h1>
+      <p>
+        Forge Haven LLC brings technology, commerce, creative, and property-focused services under one operating platform—each with dedicated capabilities and accountable leadership.
+      </p>
+
+      <div class="buttons">
+        <a href="#sectors" class="btn">Explore Sectors</a>
+        <a href="services.html" class="btn outline">View Capabilities</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BUSINESS SECTORS -->
+  <section class="business-sectors" id="sectors">
+    <div class="wrap">
+      <div class="sector-heading">
+        <span class="eyebrow">FORGE HAVEN LLC / BUSINESS SECTORS</span>
+        <h2>Specialized sectors. One operating standard.</h2>
+        <p>Each sector has its own focus, capabilities, and delivery path while operating under the Forge Haven brand.</p>
+      </div>
+
+      <div class="sector-grid">
+        <a class="sector-card" href="sectors/technology.html">
+          <div class="sector-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="sector-copy"><span>01 / Technology</span><h3>Forge Technology</h3><p>Web platforms, software development, automation, and digital systems.</p></div>
+          <i class="fa-solid fa-arrow-right sector-arrow"></i>
+        </a>
+        <a class="sector-card" href="sectors/commerce.html">
+          <div class="sector-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="sector-copy"><span>02 / Commerce</span><h3>Forge Commerce</h3><p>E-commerce operations, product sales, and commercial support.</p></div>
+          <i class="fa-solid fa-arrow-right sector-arrow"></i>
+        </a>
+        <a class="sector-card" href="sectors/creative.html">
+          <div class="sector-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <div class="sector-copy"><span>03 / Creative</span><h3>Forge Creative</h3><p>Brand design, video, content, and growth-focused creative execution.</p></div>
+          <i class="fa-solid fa-arrow-right sector-arrow"></i>
+        </a>
+        <a class="sector-card" href="sectors/property.html">
+          <div class="sector-icon"><i class="fa-solid fa-tree-city"></i></div>
+          <div class="sector-copy"><span>04 / Property</span><h3>Forge Property</h3><p>Landscaping, outdoor environments, and site-focused services.</p></div>
+          <i class="fa-solid fa-arrow-right sector-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CONTENT STUDIO -->
+  <section class="product-studio" id="studio">
+    <div class="wrap">
+      <div class="studio-head">
+        <span class="eyebrow">FORGE CREATIVE / PRODUCT CONTENT STUDIO</span>
+        <h2>Studio-ready product content. Shot, edited & delivered.</h2>
+        <p>Professional indoor product videography and photography for e-commerce, social media, campaigns, catalogs, and ads.</p>
+        <div class="studio-chips" aria-label="Studio services">
+          <span><i class="fa-solid fa-camera-retro"></i> Indoor Studio</span>
+          <span><i class="fa-solid fa-clapperboard"></i> Shoot</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> Edit</span>
+          <span><i class="fa-solid fa-box-open"></i> Final Delivery</span>
+        </div>
+      </div>
+
+      <div class="studio-package-grid">
+        <article class="studio-package-card">
+          <div class="studio-package-top">
+            <div class="studio-package-icon"><i class="fa-solid fa-video"></i></div>
+            <div>
+              <span class="studio-package-label">VIDEO PACKAGE</span>
+              <h3>Product Videography</h3>
+            </div>
+          </div>
+          <p class="studio-package-intro">A complete indoor production package for product reels, ads, showcases, and social content.</p>
+          <ul class="studio-feature-list">
+            <li><i class="fa-solid fa-check"></i><span>Indoor studio product shoot</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Shot planning & product composition</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Professional product videography</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Video editing, color & clean finishing</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Social / ad / product showcase delivery</span></li>
+          </ul>
+          <div class="studio-bonus">
+            <span class="studio-bonus-tag">FREE BONUS</span>
+            <strong>5 Edited Product Photos</strong>
+            <small>Included with a videography package.</small>
+          </div>
+          <a class="btn studio-cta" target="_blank" rel="noopener" href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven%2C%20I%27m%20interested%20in%20the%20Product%20Videography%20package.%20Please%20share%20package%20details%2C%20available%20studio%20slots%2C%20and%20pricing.">Get Video Package <i class="fa-brands fa-whatsapp"></i></a>
+        </article>
+
+        <article class="studio-package-card">
+          <div class="studio-package-top">
+            <div class="studio-package-icon"><i class="fa-solid fa-camera"></i></div>
+            <div>
+              <span class="studio-package-label">PHOTO PACKAGE</span>
+              <h3>Product Photography</h3>
+            </div>
+          </div>
+          <p class="studio-package-intro">Clean, high-quality product photography prepared for stores, campaigns, catalogs, and social media.</p>
+          <ul class="studio-feature-list">
+            <li><i class="fa-solid fa-check"></i><span>Indoor studio product photoshoot</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Product styling & composition</span></li>
+            <li><i class="fa-solid fa-check"></i><span>High-resolution edited photos</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Retouching, color & background finishing</span></li>
+            <li><i class="fa-solid fa-check"></i><span>E-commerce & social-ready exports</span></li>
+          </ul>
+          <div class="studio-bonus">
+            <span class="studio-bonus-tag">FREE BONUS</span>
+            <strong>5 Poster Designs</strong>
+            <small>Included with a photography package.</small>
+          </div>
+          <a class="btn studio-cta" target="_blank" rel="noopener" href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven%2C%20I%27m%20interested%20in%20the%20Product%20Photography%20package.%20Please%20share%20package%20details%2C%20available%20studio%20slots%2C%20and%20pricing.">Get Photo Package <i class="fa-brands fa-whatsapp"></i></a>
+        </article>
+      </div>
+
+      <p class="studio-note"><i class="fa-solid fa-circle-info"></i> Final deliverables and turnaround depend on product quantity, creative scope, and selected package.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services">
+    <div class="wrap">
+      <h2>Core Capabilities</h2>
+      <p class="hint">A focused view of capabilities delivered across our operating sectors.</p>
+
+      <div class="service-grid">
+        <div class="card">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Web Development</h3>
+          <p>Modern, responsive & fast websites.</p>
+          <a href="services.html" class="btn small">View</a>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Digital Marketing</h3>
+          <p>Ads, growth & brand reach.</p>
+          <a href="services.html" class="btn small">View</a>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-video"></i>
+          <h3>Video Editing</h3>
+          <p>YouTube, reels, ads & edits.</p>
+          <a href="services.html" class="btn small">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ WHY CHOOSE US (between Services and Reach/Team) -->
+  <section class="why">
+    <div class="wrap">
+      <div class="why-head">
+        <h2>How We Operate</h2>
+        <p>Clear ownership, specialized execution, and consistent standards across every sector.</p>
+      </div>
+
+      <div class="why-row" id="whyRow">
+        <div class="why-pill">Clear ownership</div>
+        <div class="why-pill">Specialist teams</div>
+        <div class="why-pill">Quality control</div>
+        <div class="why-pill">Client support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ REACH SECTION -->
+  <section class="reach-section" id="reach">
+    <div class="reach-wrap reveal">
+      <!-- LEFT -->
+      <div class="reach-left">
+        <div class="accent-bar"></div>
+        <h2>ONE PLATFORM<br/>MULTIPLE SECTORS</h2>
+
+        <div class="node-area">
+          <svg class="wires" viewBox="0 0 520 320" fill="none">
+            <path class="wire" d="M80 260 H210 V200 H320" />
+            <path class="wire" d="M210 200 V120 H360" />
+            <path class="wire" d="M210 200 V260 H360" />
+            <circle class="dot" cx="210" cy="200" r="4"/>
+            <circle class="dot" cx="80" cy="260" r="4"/>
+            <circle class="dot" cx="320" cy="200" r="4"/>
+            <circle class="dot" cx="360" cy="120" r="4"/>
+            <circle class="dot" cx="360" cy="260" r="4"/>
+          </svg>
+
+          <div class="node node-up" style="left:26px; top:220px;">up</div>
+          <div class="node node-fb" style="left:64px; top:168px;">f</div>
+          <div class="node node-in" style="left:140px; top:120px;">in</div>
+          <div class="node node-r"  style="left:250px; top:74px;">R</div>
+
+          <div class="spark"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="reach-right">
+        <div class="device">
+          <div class="list-mask">
+            <div class="list track">
+
+              <!-- A -->
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Technology</b>
+                  <span>Web • Software • Automation</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Commerce</b>
+                  <span>E-commerce • Product Operations</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Creative</b>
+                  <span>Brand • Video • Growth</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Property</b>
+                  <span>Landscaping • Site Services</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Operations</b>
+                  <span>Coordination • Client Support</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <!-- B (duplicate for seamless loop) -->
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Technology</b>
+                  <span>Web • Software • Automation</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Commerce</b>
+                  <span>E-commerce • Product Operations</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Creative</b>
+                  <span>Brand • Video • Growth</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Property</b>
+                  <span>Landscaping • Site Services</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+              <div class="r-card">
+                <div class="r-avatar"></div>
+                <div class="r-txt">
+                  <b>Forge Operations</b>
+                  <span>Coordination • Client Support</span>
+                </div>
+                <div class="r-tag"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ✅ TEAM -->
+  <section id="team" class="team">
+    <h2>Leadership & Operating Team</h2>
+    <p class="team-sub">The people responsible for direction, operations, creative delivery, and field execution.</p>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <a href="team-foyej.html" class="team-card-link">
+          <div class="avatar">
+            <img src="images/admin.jpg" alt="Foyej Ullah">
+          </div>
+          <span class="role">CEO & Managing Director</span>
+          <h3>Foyej Ullah</h3>
+          <p>Founder of Forge Haven LLC, responsible for company direction, sector development, and overall operations.</p>
+        </a>
+
+        <div class="team-social">
+          <a href="https://www.facebook.com/Foyej.The.Game.Error" aria-label="Facebook" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <a href="team-roni.html" class="team-card-link">
+          <div class="avatar">
+            <img src="images/worker1.jpg" alt="Roni Khan">
+          </div>
+          <span class="role">General Manager (GM)</span>
+          <h3>Roni Khan</h3>
+          <p>Oversees day-to-day operations, cross-sector coordination, and business execution.</p>
+        </a>
+
+        <div class="team-social">
+          <a href="https://www.facebook.com/roni.khan.who" aria-label="Facebook" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <a href="team-sujon.html" class="team-card-link">
+          <div class="avatar">
+            <img src="images/worker2.jpg" alt="Monir Hossain Sujon">
+          </div>
+          <span class="role">Head of Graphics Design</span>
+          <h3>Monir Hossain Sujon</h3>
+          <p>Leads visual direction and creative delivery across Forge Haven projects and brand work.</p>
+        </a>
+
+        <div class="team-social">
+          <a href="https://www.facebook.com/monirhossainsujon61" aria-label="Facebook" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <a href="team-musa.html" class="team-card-link">
+          <div class="avatar">
+            <img src="images/worker3.jpg" alt="Kazi Musa">
+          </div>
+          <span class="role">Head of Landscaping</span>
+          <h3>Kazi Musa</h3>
+          <p>Leads landscaping delivery and coordinates property-focused field operations.</p>
+        </a>
+
+        <div class="team-social">
+          <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>For business inquiries, project discussions, or support, choose the channel that works best for you.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" target="_blank" href="https://wa.me/8801639444747" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <h3>Live Chat (WhatsApp)</h3>
+          <span>Business inquiries & project support</span>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <a class="contact-card" href="mailto:help@forgehavenllc.org?subject=Forge%20Haven%20Support" rel="noopener">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h3>Email Us</h3>
+          <span>help@forgehavenllc.org</span>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <a class="contact-card" href="tel:+8801639444747" rel="noopener">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h3>Call Now</h3>
+          <span>+8801639-444747</span>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- ✅ FAQ (under Contact) -->
+    <div class="faq-wrap">
+      <h3 class="faq-title">FAQ</h3>
+      <p class="faq-sub">Common questions before you start.</p>
+
+      <div class="faq-grid">
+        <button class="faq-item" data-question="Timeline?" data-answer="Timelines depend on scope, complexity, and the sector involved. After reviewing your requirements, we confirm a delivery plan and milestones.">
+          <span>Timeline?</span>
+          <span class="faq-plus">+</span>
+        </button>
+
+        <button class="faq-item" data-question="Payment?" data-answer="Payment structure is confirmed with each engagement and may be milestone-based depending on project scope and delivery requirements.">
+          <span>Payment?</span>
+          <span class="faq-plus">+</span>
+        </button>
+
+        <button class="faq-item" data-question="Support?" data-answer="Post-delivery support is defined by the project or service scope. Ongoing support can also be arranged where needed.">
+          <span>Support?</span>
+          <span class="faq-plus">+</span>
+        </button>
+
+        <button class="faq-item" data-question="What info do you need to start?" data-answer="Share the business need, preferred outcome, relevant references or assets, timeline, and budget range. We use that to confirm the right sector and delivery plan.">
+          <span>What info do you need to start?</span>
+          <span class="faq-plus">+</span>
+        </button>
+
+        <button class="faq-item" data-question="Revision policy?" data-answer="Revision terms are defined by the engagement. Material scope changes may require an updated timeline or commercial agreement.">
+          <span>Revision policy?</span>
+          <span class="faq-plus">+</span>
+        </button>
+
+        <button class="faq-item" data-question="Do you offer urgent delivery?" data-answer="Priority delivery may be available depending on team capacity and scope. Any schedule or cost impact is confirmed before work begins.">
+          <span>Do you offer urgent delivery?</span>
+          <span class="faq-plus">+</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ✅ FAQ POPUP MODAL -->
+    <div class="faq-modal" id="faqModal" aria-hidden="true">
+      <div class="faq-modal-backdrop" data-close="true"></div>
+
+      <div class="faq-modal-box" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle">
+        <button class="faq-close" id="faqCloseBtn" aria-label="Close FAQ">✕</button>
+        <h4 id="faqModalTitle" class="faq-modal-title">Question</h4>
+        <p id="faqModalAnswer" class="faq-modal-answer">Answer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/8801639444747" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer class="fh-footer" id="footer">
+    <div class="fh-footer-bg"></div>
+
+    <div class="fh-footer-wrap">
+      <div class="fh-social-row">
+        <a class="fh-social-link" href="https://www.facebook.com/forgehavenllc" target="_blank" rel="noopener">
+          <span>Facebook</span><span class="fh-arrow">→</span>
+        </a>
+
+        <a class="fh-social-link" href="https://twitter.com/forgehavenllc" target="_blank" rel="noopener">
+          <span>Twitter</span><span class="fh-arrow">→</span>
+        </a>
+
+        <a class="fh-social-link" href="https://www.youtube.com/@forgehavenllc" target="_blank" rel="noopener">
+          <span>YouTube</span><span class="fh-arrow">→</span>
+        </a>
+
+        <a class="fh-social-link" href="https://www.instagram.com/forgehavenllc" target="_blank" rel="noopener">
+          <span>Instagram</span><span class="fh-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="fh-footer-grid">
+
+        <div class="fh-col">
+          <h4>Forge Haven LLC</h4>
+          <p class="fh-muted">
+            A multi-sector operating company spanning technology, commerce, creative, and property-focused services.
+          </p>
+
+          <div class="fh-help">
+            <div class="fh-label">Help Email</div>
+            <a class="fh-mail" href="mailto:help@forgehavenllc.org">help@forgehavenllc.org</a>
+          </div>
+        </div>
+
+        <div class="fh-col">
+          <h5>Company</h5>
+          <a href="#home">Home</a>
+          <a href="#sectors">Business Sectors</a>
+          <a href="services.html">Capabilities</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="fh-col">
+          <h5>Support</h5>
+          <a href="#contact">Help Center</a>
+          <a href="#contact">Support Request</a>
+          <a href="#contact">Service Inquiry</a>
+          <a href="#contact">Feedback</a>
+        </div>
+
+        <div class="fh-col">
+          <h5>Social</h5>
+          <a href="https://www.facebook.com/forgehavenllc" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/forgehavenllc" target="_blank" rel="noopener">Twitter (@forgehavenllc)</a>
+          <a href="https://www.youtube.com/@forgehavenllc" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/forgehavenllc" target="_blank" rel="noopener">Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="fh-footer-bottom">
+        <p>© <span id="year"></span> <span class="fh-brand">Forge Haven LLC</span>. All rights reserved.</p>
+        <a class="fh-top" href="#home">↑ Back to top</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/app.js" defer></script>
+</body>
+</html>
