@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development | Forge Haven LLC</title>
+  <link rel="canonical" href="https://forgehavenllc.org/services/software-development.html">
+  <!-- ===== FAVICON / SEARCH PREVIEW ===== -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/brand/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/brand/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <meta property="og:title" content="Forge Haven">
+  <meta property="og:description" content="Forge Haven LLC Business Capability">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://forgehavenllc.org/images/brand/og-image.png">
+  <meta property="og:url" content="https://forgehavenllc.org">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forge Haven">
+  <meta name="twitter:description" content="Forge Haven LLC Business Capability">
+  <meta name="twitter:image" content="https://forgehavenllc.org/images/brand/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Forge Haven LLC",
+    "url": "https://forgehavenllc.org",
+    "logo": "https://forgehavenllc.org/images/brand/og-image.png"
+  }
+  </script>
+
+  <!-- MAIN CSS (important: ../ ) -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"><a href="../index.html" aria-label="Forge Haven Home"><img src="../images/brand/logo.png" alt="Forge Haven" class="logo-img"></a></div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav always-show" id="navMenu">
+      <a href="../index.html">Home</a>
+      <a href="../services.html" class="active">Capabilities</a>
+      <a href="../index.html#team">Team</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1>Software Development</h1>
+    <p>
+      Custom software solutions, automation systems, and scalable applications
+      tailored to your business needs.
+    </p>
+
+    <div class="buttons" style="margin-top:18px;">
+      <a class="btn outline" href="../services.html">← Back</a>
+      <a class="btn" href="#order">Discuss Project</a>
+      <a class="btn outline" href="product-selling.html">Next →</a>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="services-page">
+    <div class="service-grid">
+
+      <div class="card">
+        <i class="fa-solid fa-gears"></i>
+        <h3>Custom Software</h3>
+        <p>
+          Business-specific desktop or web-based software built for performance,
+          security, and scalability.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Automation Systems</h3>
+        <p>
+          Automate repetitive tasks, reports, and workflows to save time and cost.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Database & Backend</h3>
+        <p>
+          Secure backend systems with optimized databases and API integration.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ORDER SECTION -->
+  <section id="order" class="contact">
+    <h2>Order Software Development Service</h2>
+    <p>Click below to place your order directly via WhatsApp.</p>
+
+    <a class="btn"
+       target="_blank"
+       href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven,%0AI%20want%20Software%20Development%20service.%0A%0AProject%20Details:%0ABudget:%0ADeadline:%0A">
+      Send Inquiry on WhatsApp
+    </a>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/8801639444747" target="_blank" class="whatsapp-btn">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- JS (menu only, optional) -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    function setIcon(open){
+      menuBtn.innerHTML = open
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    }
+
+    function toggleMenu(){
+      navMenu.classList.toggle("show");
+      setIcon(navMenu.classList.contains("show"));
+    }
+
+    setIcon(false);
+    menuBtn.addEventListener("click", toggleMenu);
+  </script>
+
+</body>
+</html>

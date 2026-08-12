@@ -1,647 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forge Haven LLC | Multi-Sector Business & Operations</title>
-  <meta name="description" content="Forge Haven LLC is a multi-sector operating company spanning technology, commerce, creative, and property services.">
-  <link rel="canonical" href="https://forgehavenllc.org/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video Editing — Forge Haven LLC</title>
+  <link rel="canonical" href="https://forgehavenllc.org/services/video-editing/index.html">
+  <meta name="description" content="Futuristic, high-contrast video editing services — YouTube, reels/shorts, ads, motion graphics." />
 
-  <!-- ===== FAVICON / SEARCH PREVIEW ===== -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#0b0b0b">
-
-  <!-- ===== OPEN GRAPH ===== -->
-  <meta property="og:title" content="Forge Haven">
-  <meta property="og:description" content="Forge Haven LLC operates across technology, commerce, creative, and property services under one platform.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://forgehavenllc.org/images/brand/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://forgehavenllc.org/">
-
-  <!-- ===== TWITTER CARD ===== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Forge Haven">
-  <meta name="twitter:description" content="Forge Haven LLC operates across technology, commerce, creative, and property services under one platform.">
-  <meta name="twitter:image" content="https://forgehavenllc.org/images/brand/og-image.png">
-
-  <!-- ===== SCHEMA ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Forge Haven LLC",
-    "url": "https://forgehavenllc.org/",
-    "logo": "https://forgehavenllc.org/images/brand/og-image.png"
-  }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="video-editing.css" />
 </head>
 
 <body>
+  <!-- Water FX (stays behind content via CSS z-index) -->
+  <canvas id="waterFx"></canvas>
+  <div class="grid"></div>
 
-  <!-- WATER CANVAS -->
-  <canvas id="waterCanvas"></canvas>
+  <main class="wrap">
+    <div class="pageGrid">
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-box">
-      <div class="loader-title">Forge Haven</div>
-      <div class="loader-ring"></div>
-      <div class="loader-bars">
-        <span></span><span></span><span></span><span></span>
-      </div>
-      <div class="loader-text">Loading experience…</div>
-    </div>
-  </div>
+      <div class="top fullBleed">
+        <div class="crumb">
+          <span>Forge Haven LLC</span>
+          <span>›</span>
+          <a href="../../index.html">Home</a>
+          <span>›</span>
+          <a href="../../services.html">Capabilities</a>
+          <span>›</span>
+          <span class="here">Video Editing</span>
+        </div>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <a href="index.html" aria-label="Forge Haven Home">
-        <img src="images/brand/logo.png" alt="Forge Haven" class="logo-img">
-      </a>
-    </div>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <nav class="nav" id="navMenu">
-      <a href="#home" class="active">Home</a>
-      <a href="#sectors">Sectors</a>
-      <a href="services.html">Capabilities</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="wrap">
-      <div class="maintenance-banner">
-        <span class="maintenance-dot"></span>
-        <span class="maintenance-text">Forge Haven LLC • Multi-Sector Operations</span>
-      </div>
-
-      <h1>One Company. Multiple Sectors. Built to Deliver.</h1>
-      <p>
-        Forge Haven LLC brings technology, commerce, creative, and property-focused services under one operating platform—each with dedicated capabilities and accountable leadership.
-      </p>
-
-      <div class="buttons">
-        <a href="#sectors" class="btn">Explore Sectors</a>
-        <a href="services.html" class="btn outline">View Capabilities</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- BUSINESS SECTORS -->
-  <section class="business-sectors" id="sectors">
-    <div class="wrap">
-      <div class="sector-heading">
-        <span class="eyebrow">FORGE HAVEN LLC / BUSINESS SECTORS</span>
-        <h2>Specialized sectors. One operating standard.</h2>
-        <p>Each sector has its own focus, capabilities, and delivery path while operating under the Forge Haven brand.</p>
-      </div>
-
-      <div class="sector-grid">
-        <a class="sector-card" href="sectors/technology.html">
-          <div class="sector-icon"><i class="fa-solid fa-code"></i></div>
-          <div class="sector-copy"><span>01 / Technology</span><h3>Forge Technology</h3><p>Web platforms, software development, automation, and digital systems.</p></div>
-          <i class="fa-solid fa-arrow-right sector-arrow"></i>
-        </a>
-        <a class="sector-card" href="sectors/commerce.html">
-          <div class="sector-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-          <div class="sector-copy"><span>02 / Commerce</span><h3>Forge Commerce</h3><p>E-commerce operations, product sales, and commercial support.</p></div>
-          <i class="fa-solid fa-arrow-right sector-arrow"></i>
-        </a>
-        <a class="sector-card" href="sectors/creative.html">
-          <div class="sector-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-          <div class="sector-copy"><span>03 / Creative</span><h3>Forge Creative</h3><p>Brand design, video, content, and growth-focused creative execution.</p></div>
-          <i class="fa-solid fa-arrow-right sector-arrow"></i>
-        </a>
-        <a class="sector-card" href="sectors/property.html">
-          <div class="sector-icon"><i class="fa-solid fa-tree-city"></i></div>
-          <div class="sector-copy"><span>04 / Property</span><h3>Forge Property</h3><p>Landscaping, outdoor environments, and site-focused services.</p></div>
-          <i class="fa-solid fa-arrow-right sector-arrow"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT CONTENT STUDIO -->
-  <section class="product-studio" id="studio">
-    <div class="wrap">
-      <div class="studio-head">
-        <span class="eyebrow">FORGE CREATIVE / PRODUCT CONTENT STUDIO</span>
-        <h2>Studio-ready product content. Shot, edited & delivered.</h2>
-        <p>Professional indoor product videography and photography for e-commerce, social media, campaigns, catalogs, and ads.</p>
-        <div class="studio-chips" aria-label="Studio services">
-          <span><i class="fa-solid fa-camera-retro"></i> Indoor Studio</span>
-          <span><i class="fa-solid fa-clapperboard"></i> Shoot</span>
-          <span><i class="fa-solid fa-wand-magic-sparkles"></i> Edit</span>
-          <span><i class="fa-solid fa-box-open"></i> Final Delivery</span>
+        <div class="pill">
+          <span class="dot"></span>
+          <span>Premiere Pro • After Effects</span>
         </div>
       </div>
 
-      <div class="studio-package-grid">
-        <article class="studio-package-card">
-          <div class="studio-package-top">
-            <div class="studio-package-icon"><i class="fa-solid fa-video"></i></div>
-            <div>
-              <span class="studio-package-label">VIDEO PACKAGE</span>
-              <h3>Product Videography</h3>
+      <!-- HERO -->
+      <section class="hero fx-section fx-click fullBleed" data-accent="cyan-pink">
+        <div class="heroInner">
+          <!-- Left: copy -->
+          <div class="heroCopy">
+            <div class="kicker"><b>Video Editing Services</b></div>
+            <h1>Premium edits that feel cinematic — and convert.</h1>
+            <p class="sub">
+              YouTube long-form, reels/shorts, ads & promos, plus motion graphics and clean sound design.
+              Hover any section to shift accents. Click for splash + ripple.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary fx-click" href="#contact">Get a Free Sample <small>(Send 20–30 sec clip)</small></a>
+              <a class="btn fx-click" href="#projects">View Work <small>(PR + AE)</small></a>
+              <a class="btn ghost fx-click" href="../../services.html">Back to Services</a>
+            </div>
+
+            <div class="miniGrid">
+              <div class="mini fx-section" data-accent="blue-cyan">
+                <strong>24–72h</strong><span>delivery options</span>
+              </div>
+              <div class="mini fx-section" data-accent="cyan-purple">
+                <strong>Pro Audio</strong><span>clean voice + SFX</span>
+              </div>
+              <div class="mini fx-section" data-accent="purple-pink">
+                <strong>Modern Motion</strong><span>titles, lower-thirds</span>
+              </div>
+              <div class="mini fx-section" data-accent="pink-blue">
+                <strong>Export Ready</strong><span>YouTube • Reels • Ads</span>
+              </div>
             </div>
           </div>
-          <p class="studio-package-intro">A complete indoor production package for product reels, ads, showcases, and social content.</p>
-          <ul class="studio-feature-list">
-            <li><i class="fa-solid fa-check"></i><span>Indoor studio product shoot</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Shot planning & product composition</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Professional product videography</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Video editing, color & clean finishing</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Social / ad / product showcase delivery</span></li>
-          </ul>
-          <div class="studio-bonus">
-            <span class="studio-bonus-tag">FREE BONUS</span>
-            <strong>5 Edited Product Photos</strong>
-            <small>Included with a videography package.</small>
+
+          <!-- Right: hero video -->
+          <div class="heroVideo neon-run fx-section fx-click" data-accent="blue-cyan" style="--nA:#19f5ff; --nB:#ff3fd1;">
+            <video src="assets/video/hero-editing.mp4" autoplay muted loop playsinline preload="metadata"></video>
+
+            <div class="heroPanel">
+              <h3>What you get</h3>
+              <ul>
+                <li>Clean cuts, pacing, captions & beat-sync</li>
+                <li>Color touch + audio polish + SFX</li>
+                <li>Export settings for any platform</li>
+              </ul>
+              <div class="chips">
+                <span>Premiere Pro</span><span>After Effects</span><span>DaVinci-style grading</span>
+              </div>
+            </div>
           </div>
-          <a class="btn studio-cta" target="_blank" rel="noopener" href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven%2C%20I%27m%20interested%20in%20the%20Product%20Videography%20package.%20Please%20share%20package%20details%2C%20available%20studio%20slots%2C%20and%20pricing.">Get Video Package <i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </section>
+
+      <div class="sectionTitle fullBleed">
+        <h2>Core Services</h2>
+      </div>
+
+      <section class="gridCards fullBleed">
+        <article class="card fx-section fx-click" data-accent="blue-cyan">
+          <div class="cardTop">
+            <div class="icon">▶</div>
+            <div class="tag">YouTube</div>
+          </div>
+          <h3>YouTube Editing</h3>
+          <p>Clean cuts, pacing, B-roll, subtitles, sound polish — optimized for retention.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> 1080p / 4K</div>
+            <div class="arrow">Open <span>↗</span></div>
+          </div>
         </article>
 
-        <article class="studio-package-card">
-          <div class="studio-package-top">
-            <div class="studio-package-icon"><i class="fa-solid fa-camera"></i></div>
-            <div>
-              <span class="studio-package-label">PHOTO PACKAGE</span>
-              <h3>Product Photography</h3>
-            </div>
+        <article class="card fx-section fx-click" data-accent="cyan-pink">
+          <div class="cardTop">
+            <div class="icon">▣</div>
+            <div class="tag">Shorts / Reels</div>
           </div>
-          <p class="studio-package-intro">Clean, high-quality product photography prepared for stores, campaigns, catalogs, and social media.</p>
-          <ul class="studio-feature-list">
-            <li><i class="fa-solid fa-check"></i><span>Indoor studio product photoshoot</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Product styling & composition</span></li>
-            <li><i class="fa-solid fa-check"></i><span>High-resolution edited photos</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Retouching, color & background finishing</span></li>
-            <li><i class="fa-solid fa-check"></i><span>E-commerce & social-ready exports</span></li>
-          </ul>
-          <div class="studio-bonus">
-            <span class="studio-bonus-tag">FREE BONUS</span>
-            <strong>5 Poster Designs</strong>
-            <small>Included with a photography package.</small>
+          <h3>Reels / Shorts</h3>
+          <p>Beat-sync, captions, punch-zoom, transitions — built for vertical engagement.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> 9:16</div>
+            <div class="arrow">Open <span>↗</span></div>
           </div>
-          <a class="btn studio-cta" target="_blank" rel="noopener" href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven%2C%20I%27m%20interested%20in%20the%20Product%20Photography%20package.%20Please%20share%20package%20details%2C%20available%20studio%20slots%2C%20and%20pricing.">Get Photo Package <i class="fa-brands fa-whatsapp"></i></a>
         </article>
-      </div>
 
-      <p class="studio-note"><i class="fa-solid fa-circle-info"></i> Final deliverables and turnaround depend on product quantity, creative scope, and selected package.</p>
-    </div>
-  </section>
-
-  <!-- SERVICES PREVIEW -->
-  <section class="services">
-    <div class="wrap">
-      <h2>Core Capabilities</h2>
-      <p class="hint">A focused view of capabilities delivered across our operating sectors.</p>
-
-      <div class="service-grid">
-        <div class="card">
-          <i class="fa-solid fa-globe"></i>
-          <h3>Web Development</h3>
-          <p>Modern, responsive & fast websites.</p>
-          <a href="services.html" class="btn small">View</a>
-        </div>
-
-        <div class="card">
-          <i class="fa-solid fa-bullhorn"></i>
-          <h3>Digital Marketing</h3>
-          <p>Ads, growth & brand reach.</p>
-          <a href="services.html" class="btn small">View</a>
-        </div>
-
-        <div class="card">
-          <i class="fa-solid fa-video"></i>
-          <h3>Video Editing</h3>
-          <p>YouTube, reels, ads & edits.</p>
-          <a href="services.html" class="btn small">View</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ WHY CHOOSE US (between Services and Reach/Team) -->
-  <section class="why">
-    <div class="wrap">
-      <div class="why-head">
-        <h2>How We Operate</h2>
-        <p>Clear ownership, specialized execution, and consistent standards across every sector.</p>
-      </div>
-
-      <div class="why-row" id="whyRow">
-        <div class="why-pill">Clear ownership</div>
-        <div class="why-pill">Specialist teams</div>
-        <div class="why-pill">Quality control</div>
-        <div class="why-pill">Client support</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ REACH SECTION -->
-  <section class="reach-section" id="reach">
-    <div class="reach-wrap reveal">
-      <!-- LEFT -->
-      <div class="reach-left">
-        <div class="accent-bar"></div>
-        <h2>ONE PLATFORM<br/>MULTIPLE SECTORS</h2>
-
-        <div class="node-area">
-          <svg class="wires" viewBox="0 0 520 320" fill="none">
-            <path class="wire" d="M80 260 H210 V200 H320" />
-            <path class="wire" d="M210 200 V120 H360" />
-            <path class="wire" d="M210 200 V260 H360" />
-            <circle class="dot" cx="210" cy="200" r="4"/>
-            <circle class="dot" cx="80" cy="260" r="4"/>
-            <circle class="dot" cx="320" cy="200" r="4"/>
-            <circle class="dot" cx="360" cy="120" r="4"/>
-            <circle class="dot" cx="360" cy="260" r="4"/>
-          </svg>
-
-          <div class="node node-up" style="left:26px; top:220px;">up</div>
-          <div class="node node-fb" style="left:64px; top:168px;">f</div>
-          <div class="node node-in" style="left:140px; top:120px;">in</div>
-          <div class="node node-r"  style="left:250px; top:74px;">R</div>
-
-          <div class="spark"></div>
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="reach-right">
-        <div class="device">
-          <div class="list-mask">
-            <div class="list track">
-
-              <!-- A -->
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Technology</b>
-                  <span>Web • Software • Automation</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Commerce</b>
-                  <span>E-commerce • Product Operations</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Creative</b>
-                  <span>Brand • Video • Growth</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Property</b>
-                  <span>Landscaping • Site Services</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Operations</b>
-                  <span>Coordination • Client Support</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <!-- B (duplicate for seamless loop) -->
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Technology</b>
-                  <span>Web • Software • Automation</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Commerce</b>
-                  <span>E-commerce • Product Operations</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Creative</b>
-                  <span>Brand • Video • Growth</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Property</b>
-                  <span>Landscaping • Site Services</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-              <div class="r-card">
-                <div class="r-avatar"></div>
-                <div class="r-txt">
-                  <b>Forge Operations</b>
-                  <span>Coordination • Client Support</span>
-                </div>
-                <div class="r-tag"></div>
-              </div>
-
-            </div>
+        <article class="card fx-section fx-click" data-accent="purple-pink">
+          <div class="cardTop">
+            <div class="icon">★</div>
+            <div class="tag">Ads</div>
           </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ✅ TEAM -->
-  <section id="team" class="team">
-    <h2>Leadership & Operating Team</h2>
-    <p class="team-sub">The people responsible for direction, operations, creative delivery, and field execution.</p>
-
-    <div class="team-grid">
-
-      <div class="team-card">
-        <a href="team-foyej.html" class="team-card-link">
-          <div class="avatar">
-            <img src="images/admin.jpg" alt="Foyej Ullah">
+          <h3>Ads & Promo</h3>
+          <p>Hook-first edits, CTA timing, brand rhythm — conversion-friendly and sharp.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> 1:1 / 4:5</div>
+            <div class="arrow">Open <span>↗</span></div>
           </div>
-          <span class="role">CEO & Managing Director</span>
-          <h3>Foyej Ullah</h3>
-          <p>Founder of Forge Haven LLC, responsible for company direction, sector development, and overall operations.</p>
-        </a>
+        </article>
 
-        <div class="team-social">
-          <a href="https://www.facebook.com/Foyej.The.Game.Error" aria-label="Facebook" target="_blank" rel="noopener">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <a href="team-roni.html" class="team-card-link">
-          <div class="avatar">
-            <img src="images/worker1.jpg" alt="Roni Khan">
+        <article class="card fx-section fx-click" data-accent="blue-purple">
+          <div class="cardTop">
+            <div class="icon">◐</div>
+            <div class="tag">Color</div>
           </div>
-          <span class="role">General Manager (GM)</span>
-          <h3>Roni Khan</h3>
-          <p>Oversees day-to-day operations, cross-sector coordination, and business execution.</p>
-        </a>
-
-        <div class="team-social">
-          <a href="https://www.facebook.com/roni.khan.who" aria-label="Facebook" target="_blank" rel="noopener">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <a href="team-sujon.html" class="team-card-link">
-          <div class="avatar">
-            <img src="images/worker2.jpg" alt="Monir Hossain Sujon">
+          <h3>Color Grading</h3>
+          <p>Cinematic look, skin tone balance, contrast & mood — consistent style.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> LUT / Manual</div>
+            <div class="arrow">Open <span>↗</span></div>
           </div>
-          <span class="role">Head of Graphics Design</span>
-          <h3>Monir Hossain Sujon</h3>
-          <p>Leads visual direction and creative delivery across Forge Haven projects and brand work.</p>
-        </a>
+        </article>
 
-        <div class="team-social">
-          <a href="https://www.facebook.com/monirhossainsujon61" aria-label="Facebook" target="_blank" rel="noopener">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <a href="team-musa.html" class="team-card-link">
-          <div class="avatar">
-            <img src="images/worker3.jpg" alt="Kazi Musa">
+        <article class="card fx-section fx-click" data-accent="cyan-purple">
+          <div class="cardTop">
+            <div class="icon">♬</div>
+            <div class="tag">Audio</div>
           </div>
-          <span class="role">Head of Landscaping</span>
-          <h3>Kazi Musa</h3>
-          <p>Leads landscaping delivery and coordinates property-focused field operations.</p>
-        </a>
+          <h3>Sound Design</h3>
+          <p>Clean voice, music mix, SFX layers — subtle but premium impact.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> Mix & Master</div>
+            <div class="arrow">Open <span>↗</span></div>
+          </div>
+        </article>
 
-        <div class="team-social">
-          <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
+        <article class="card fx-section fx-click" data-accent="pink-blue">
+          <div class="cardTop">
+            <div class="icon">✦</div>
+            <div class="tag">Motion</div>
+          </div>
+          <h3>Motion Graphics</h3>
+          <p>Lower-thirds, titles, logo reveals, dynamic overlays — modern & clean.</p>
+          <div class="cardFooter">
+            <div class="meta"><i></i> AE Friendly</div>
+            <div class="arrow">Open <span>↗</span></div>
+          </div>
+        </article>
+      </section>
+
+      <div class="sectionTitle fullBleed">
+        <h2>Packages</h2>
       </div>
 
-    </div>
-  </section>
+      <section class="pricing fullBleed">
+        <div class="priceCard fx-section fx-click" data-accent="blue-cyan">
+          <h3>Basic</h3>
+          <div class="price">৳ 999+</div>
+          <ul class="list">
+            <li>Reels/Shorts (15–60 sec)</li>
+            <li>Captions + beat sync</li>
+            <li>1 revision</li>
+            <li>Delivery: 24–48 hrs</li>
+          </ul>
+          <button class="btn primary priceBtn fx-click">Choose Basic</button>
+        </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>For business inquiries, project discussions, or support, choose the channel that works best for you.</p>
+        <div class="priceCard fx-section fx-click" data-accent="cyan-pink">
+          <h3>Standard</h3>
+          <div class="price">৳ 2999+</div>
+          <ul class="list">
+            <li>YouTube (4–10 min)</li>
+            <li>B-roll, SFX, clean audio</li>
+            <li>2 revisions</li>
+            <li>Delivery: 48–72 hrs</li>
+          </ul>
+          <button class="btn primary priceBtn fx-click">Choose Standard</button>
+        </div>
 
-    <div class="contact-grid">
-      <a class="contact-card" target="_blank" href="https://wa.me/8801639444747" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i>
+        <div class="priceCard fx-section fx-click" data-accent="purple-pink">
+          <h3>Premium</h3>
+          <div class="price">৳ 6999+</div>
+          <ul class="list">
+            <li>Ads / Brand film</li>
+            <li>Color grade + motion graphics</li>
+            <li>3 revisions</li>
+            <li>Delivery: 3–5 days</li>
+          </ul>
+          <button class="btn primary priceBtn fx-click">Choose Premium</button>
+        </div>
+      </section>
+
+      <div class="sectionTitle fullBleed">
+        <h2>Contact</h2>
+      </div>
+
+      <section class="contact fx-section fx-click fullBleed" data-accent="cyan-purple">
         <div>
-          <h3>Live Chat (WhatsApp)</h3>
-          <span>Business inquiries & project support</span>
+          <h3>Let’s edit your next project</h3>
+          <p>Send footage + reference style. I’ll reply with timeline & quote. You can request a free 20–30 sec sample.</p>
         </div>
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
+        <div class="contactBtns">
+          <a class="btn primary fx-click" target="_blank" href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven,%20I%20need%20video%20editing.">WhatsApp</a>
+          <a class="btn fx-click" href="mailto:help@forgehavenllc.org">Email</a>
+          <a class="btn fx-click" href="#projects">Portfolio</a>
 
-      <a class="contact-card" href="mailto:help@forgehavenllc.org?subject=Forge%20Haven%20Support" rel="noopener">
-        <i class="fa-solid fa-envelope"></i>
-        <div>
-          <h3>Email Us</h3>
-          <span>help@forgehavenllc.org</span>
-        </div>
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
+    </div><!-- /pageGrid -->
+  </main>
 
-      <a class="contact-card" href="tel:+8801639444747" rel="noopener">
-        <i class="fa-solid fa-phone"></i>
-        <div>
-          <h3>Call Now</h3>
-          <span>+8801639-444747</span>
-        </div>
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-
-    <!-- ✅ FAQ (under Contact) -->
-    <div class="faq-wrap">
-      <h3 class="faq-title">FAQ</h3>
-      <p class="faq-sub">Common questions before you start.</p>
-
-      <div class="faq-grid">
-        <button class="faq-item" data-question="Timeline?" data-answer="Timelines depend on scope, complexity, and the sector involved. After reviewing your requirements, we confirm a delivery plan and milestones.">
-          <span>Timeline?</span>
-          <span class="faq-plus">+</span>
-        </button>
-
-        <button class="faq-item" data-question="Payment?" data-answer="Payment structure is confirmed with each engagement and may be milestone-based depending on project scope and delivery requirements.">
-          <span>Payment?</span>
-          <span class="faq-plus">+</span>
-        </button>
-
-        <button class="faq-item" data-question="Support?" data-answer="Post-delivery support is defined by the project or service scope. Ongoing support can also be arranged where needed.">
-          <span>Support?</span>
-          <span class="faq-plus">+</span>
-        </button>
-
-        <button class="faq-item" data-question="What info do you need to start?" data-answer="Share the business need, preferred outcome, relevant references or assets, timeline, and budget range. We use that to confirm the right sector and delivery plan.">
-          <span>What info do you need to start?</span>
-          <span class="faq-plus">+</span>
-        </button>
-
-        <button class="faq-item" data-question="Revision policy?" data-answer="Revision terms are defined by the engagement. Material scope changes may require an updated timeline or commercial agreement.">
-          <span>Revision policy?</span>
-          <span class="faq-plus">+</span>
-        </button>
-
-        <button class="faq-item" data-question="Do you offer urgent delivery?" data-answer="Priority delivery may be available depending on team capacity and scope. Any schedule or cost impact is confirmed before work begins.">
-          <span>Do you offer urgent delivery?</span>
-          <span class="faq-plus">+</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ FAQ POPUP MODAL -->
-    <div class="faq-modal" id="faqModal" aria-hidden="true">
-      <div class="faq-modal-backdrop" data-close="true"></div>
-
-      <div class="faq-modal-box" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle">
-        <button class="faq-close" id="faqCloseBtn" aria-label="Close FAQ">✕</button>
-        <h4 id="faqModalTitle" class="faq-modal-title">Question</h4>
-        <p id="faqModalAnswer" class="faq-modal-answer">Answer</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/8801639444747" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <footer class="fh-footer" id="footer">
-    <div class="fh-footer-bg"></div>
-
-    <div class="fh-footer-wrap">
-      <div class="fh-social-row">
-        <a class="fh-social-link" href="https://www.facebook.com/forgehavenllc" target="_blank" rel="noopener">
-          <span>Facebook</span><span class="fh-arrow">→</span>
-        </a>
-
-        <a class="fh-social-link" href="https://twitter.com/forgehavenllc" target="_blank" rel="noopener">
-          <span>Twitter</span><span class="fh-arrow">→</span>
-        </a>
-
-        <a class="fh-social-link" href="https://www.youtube.com/@forgehavenllc" target="_blank" rel="noopener">
-          <span>YouTube</span><span class="fh-arrow">→</span>
-        </a>
-
-        <a class="fh-social-link" href="https://www.instagram.com/forgehavenllc" target="_blank" rel="noopener">
-          <span>Instagram</span><span class="fh-arrow">→</span>
-        </a>
-      </div>
-
-      <div class="fh-footer-grid">
-
-        <div class="fh-col">
-          <h4>Forge Haven LLC</h4>
-          <p class="fh-muted">
-            A multi-sector operating company spanning technology, commerce, creative, and property-focused services.
-          </p>
-
-          <div class="fh-help">
-            <div class="fh-label">Help Email</div>
-            <a class="fh-mail" href="mailto:help@forgehavenllc.org">help@forgehavenllc.org</a>
-          </div>
-        </div>
-
-        <div class="fh-col">
-          <h5>Company</h5>
-          <a href="#home">Home</a>
-          <a href="#sectors">Business Sectors</a>
-          <a href="services.html">Capabilities</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="fh-col">
-          <h5>Support</h5>
-          <a href="#contact">Help Center</a>
-          <a href="#contact">Support Request</a>
-          <a href="#contact">Service Inquiry</a>
-          <a href="#contact">Feedback</a>
-        </div>
-
-        <div class="fh-col">
-          <h5>Social</h5>
-          <a href="https://www.facebook.com/forgehavenllc" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://twitter.com/forgehavenllc" target="_blank" rel="noopener">Twitter (@forgehavenllc)</a>
-          <a href="https://www.youtube.com/@forgehavenllc" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.instagram.com/forgehavenllc" target="_blank" rel="noopener">Instagram</a>
-        </div>
-
-      </div>
-
-      <div class="fh-footer-bottom">
-        <p>© <span id="year"></span> <span class="fh-brand">Forge Haven LLC</span>. All rights reserved.</p>
-        <a class="fh-top" href="#home">↑ Back to top</a>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script src="js/app.js" defer></script>
+  <script src="video-editing.js"></script>
 </body>
 </html>
+    <div class="sectionTitle" id="projects">
+      <h2>Running Projects</h2>
+      <p>Recent work • PR + AE pipeline</p>
+    </div>
+
+    <section class="projects fx-section fx-click" data-accent="cyan-purple">
+      <div class="projectsRow">
+        <article class="projectCard neon-run" style="--nA:#19f5ff; --nB:#ff3fd1;">
+          <h3>Brand Promo Ad <span class="muted">(15s / 30s)</span></h3>
+          <p>Hook-first cuts, CTA timing, product highlights + motion overlays.</p>
+          <div class="statusPill">Final Review</div>
+        </article>
+
+        <article class="projectCard neon-run" style="--nA:#2b7bff; --nB:#19f5ff;">
+          <h3>YouTube Episode <span class="muted">(8–12 min)</span></h3>
+          <p>Story pacing, b-roll, subtitles, sound polish — retention-focused.</p>
+          <div class="statusPill">Editing</div>
+        </article>
+
+        <article class="projectCard neon-run" style="--nA:#ff3fd1; --nB:#8b5cff;">
+          <h3>Reels Pack <span class="muted">(5 videos)</span></h3>
+          <p>Beat-sync, punch zoom, kinetic captions, fast transitions.</p>
+          <div class="statusPill">In Progress</div>
+        </article>
+
+        <article class="projectCard neon-run" style="--nA:#19f5ff; --nB:#8b5cff;">
+          <h3>Motion Title Kit <span class="muted">(AE)</span></h3>
+          <p>Lower-thirds, logo reveal, social end cards — reusable templates.</p>
+          <div class="statusPill">Delivery</div>
+        </article>
+      </div>
+    </section>
+
+    <div class="sectionTitle" id="reviews">
+      <h2>Delivery Standards</h2>
+      <p>What every editing engagement is built around</p>
+    </div>
+
+    <section class="reviews">
+      <div class="reviewsGrid">
+        <article class="reviewCard neon-run fx-section" data-accent="cyan-pink" style="--nA:#ff3fd1; --nB:#19f5ff;">
+          <div class="stars">01</div>
+          <p>Clear edit structure, pacing, captions, and export settings aligned to the approved brief.</p>
+          <div class="who">Editing Quality</div>
+        </article>
+
+        <article class="reviewCard neon-run fx-section" data-accent="blue-cyan" style="--nA:#19f5ff; --nB:#2b7bff;">
+          <div class="stars">02</div>
+          <p>Timeline, revision scope, and deliverables are confirmed before final handoff.</p>
+          <div class="who">Delivery Control</div>
+        </article>
+
+        <article class="reviewCard neon-run fx-section" data-accent="purple-pink" style="--nA:#8b5cff; --nB:#ff3fd1;">
+          <div class="stars">03</div>
+          <p>Project files and exports are prepared for the agreed platform, format, and use case.</p>
+          <div class="who">Platform Readiness</div>
+        </article>
+      </div>
+    </section>
+        </div>
+      </section>
+
+      <div class="foot fullBleed">
+        © 2026 <b>Forge Haven LLC</b> All rights reserved.
+      </div>
+
