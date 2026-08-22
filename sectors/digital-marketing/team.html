@@ -33,7 +33,6 @@
       </a>
 
       <nav class="nav-links">
-
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
 
@@ -53,7 +52,6 @@
         <a href="services.html">Services</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-
       </nav>
 
       <a class="btn" href="contact.html">
@@ -125,7 +123,13 @@
 
         <!-- FARHAD -->
 
-        <article class="team-card">
+        <article
+          class="team-card profile-trigger"
+          data-profile="farhad"
+          tabindex="0"
+          role="button"
+          aria-label="View Md Farhad Hossain profile"
+        >
 
           <img
             src="../../images/Forhadmarketinglead1.jpg"
@@ -149,7 +153,13 @@
 
         <!-- SOJIB -->
 
-        <article class="team-card">
+        <article
+          class="team-card profile-trigger"
+          data-profile="sojib"
+          tabindex="0"
+          role="button"
+          aria-label="View Md Sojib Hossen profile"
+        >
 
           <img
             src="../../images/sojibhossenlead1.jpg"
@@ -177,8 +187,8 @@
         class="empty-state"
         style="margin-top:24px"
       >
-        Additional Digital Marketing specialists can be added
-        as the division grows.
+        Click any team member to view their experience,
+        profile and areas of expertise.
       </div>
 
     </div>
@@ -186,6 +196,45 @@
   </section>
 
 </main>
+
+
+<!-- PROFILE POPUP -->
+
+<div
+  class="profile-modal"
+  id="profileModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="profile-modal-backdrop"
+    data-close-profile
+  ></div>
+
+  <div
+    class="profile-modal-card"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Team member profile"
+  >
+
+    <button
+      class="profile-modal-close"
+      type="button"
+      aria-label="Close profile"
+      data-close-profile
+    >
+      ×
+    </button>
+
+    <div
+      class="profile-modal-content"
+      id="profileModalContent"
+    ></div>
+
+  </div>
+
+</div>
 
 
 <section class="cta">
@@ -207,7 +256,6 @@
       </h2>
 
     </div>
-
 
     <a
       class="btn green"
@@ -278,7 +326,6 @@
           creative distribution and customer journeys.
         </p>
 
-
         <div class="socials">
 
           <a
@@ -324,25 +371,11 @@
           Quick Links
         </h4>
 
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-        <a href="blog.html">
-          Blog
-        </a>
-
-        <a href="projects.html">
-          Projects
-        </a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
 
       </div>
 
@@ -353,25 +386,11 @@
           Capabilities
         </h4>
 
-        <a href="services.html#paid">
-          Paid Media
-        </a>
-
-        <a href="services.html#seo">
-          SEO
-        </a>
-
-        <a href="services.html#social">
-          Social Marketing
-        </a>
-
-        <a href="services.html#crm">
-          Email &amp; CRM
-        </a>
-
-        <a href="services.html#analytics">
-          Analytics &amp; CRO
-        </a>
+        <a href="services.html#paid">Paid Media</a>
+        <a href="services.html#seo">SEO</a>
+        <a href="services.html#social">Social Marketing</a>
+        <a href="services.html#crm">Email &amp; CRM</a>
+        <a href="services.html#analytics">Analytics &amp; CRO</a>
 
       </div>
 
@@ -434,10 +453,7 @@
 </footer>
 
 
-<script
-  src="script.js"
-  defer
-></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
