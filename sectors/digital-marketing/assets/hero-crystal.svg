@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620">
+<defs>
+ <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9e0ff"/><stop offset=".18" stop-color="#8f5cff"/><stop offset=".5" stop-color="#2714c9"/><stop offset=".74" stop-color="#69f23f"/><stop offset="1" stop-color="#101316"/></linearGradient>
+ <linearGradient id="b" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".75"/><stop offset=".38" stop-color="#9f77ff" stop-opacity=".2"/><stop offset="1" stop-color="#5ef132" stop-opacity=".05"/></linearGradient>
+ <filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#5726e9" flood-opacity=".35"/></filter>
+</defs>
+<g filter="url(#s)" transform="translate(16 30)">
+ <path d="M250 38 437 154 398 403 219 544 58 390 89 132Z" fill="#090b10" stroke="#8d4dff" stroke-opacity=".35"/>
+ <path d="M250 38 305 205 437 154Z" fill="url(#a)"/>
+ <path d="M250 38 89 132 305 205Z" fill="#5e32e5" opacity=".8"/>
+ <path d="M89 132 58 390 211 307 305 205Z" fill="url(#b)"/>
+ <path d="M305 205 211 307 398 403 437 154Z" fill="#351c92"/>
+ <path d="M58 390 219 544 211 307Z" fill="#0d1c13"/>
+ <path d="M211 307 219 544 398 403Z" fill="url(#a)" opacity=".75"/>
+ <path d="M104 143 248 58 292 192" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="6"/>
+ <circle cx="305" cy="205" r="18" fill="#60ef35"/><circle cx="305" cy="205" r="7" fill="#fff"/>
+</g></svg>
