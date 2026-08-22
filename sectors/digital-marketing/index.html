@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Forge Digital — Digital Marketing Division | Forge Digital</title>
+  <title>Forge Digital — Digital Marketing Division | Forge Haven LLC</title>
 
   <meta
     name="description"
@@ -16,148 +16,111 @@
   <meta name="theme-color" content="#050507">
   <link rel="stylesheet" href="style.css">
 
-
-  <!-- =====================================================
-       HOME PROJECT SHOWCASE — LOCAL 3D STYLES
-       Only affects the homepage featured-project section.
-  ====================================================== -->
-
   <style>
+
+    /* =====================================================
+       HOMEPAGE PROJECT SHOWCASE
+    ===================================================== */
 
     .home-project-showcase{
       position:relative;
       overflow:hidden;
     }
 
-
     .home-project-showcase::before{
       content:"";
       position:absolute;
-
-      width:650px;
-      height:650px;
-
-      left:-330px;
-      top:5%;
-
+      width:560px;
+      height:560px;
+      left:-340px;
+      top:12%;
       border-radius:50%;
-
       background:
         radial-gradient(
           circle,
-          rgba(36,214,129,.08),
-          transparent 68%
+          rgba(59,179,99,.055),
+          transparent 70%
         );
-
+      filter:blur(55px);
       pointer-events:none;
     }
-
 
     .home-project-showcase::after{
       content:"";
       position:absolute;
-
-      width:700px;
-      height:700px;
-
-      right:-350px;
-      bottom:-100px;
-
+      width:620px;
+      height:620px;
+      right:-380px;
+      bottom:-150px;
       border-radius:50%;
-
       background:
         radial-gradient(
           circle,
-          rgba(122,68,255,.12),
-          transparent 68%
+          rgba(111,68,210,.075),
+          transparent 70%
         );
-
+      filter:blur(65px);
       pointer-events:none;
     }
-
-
 
     .home-project-intro{
       position:relative;
       z-index:2;
-
       max-width:800px;
-
       margin:auto;
-
       text-align:center;
     }
 
-
     .home-project-intro p{
       max-width:680px;
-
-      margin:
-        18px auto 0;
+      margin:18px auto 0;
     }
-
-
 
     .home-project-3d-grid{
       position:relative;
       z-index:2;
-
       display:grid;
-
-      grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:30px;
-
       margin-top:48px;
     }
 
-
-
     .home-project-3d{
       display:block;
-
       min-width:0;
-
       color:inherit;
       text-decoration:none;
-
       transform-style:preserve-3d;
     }
 
-
-
     .home-project-visual{
       position:relative;
-
-      height:390px;
-
+      height:385px;
       overflow:hidden;
-
-      border-radius:30px;
+      border-radius:28px;
 
       border:
-        1px solid rgba(255,255,255,.10);
+        1px solid rgba(255,255,255,.085);
 
       background:
         radial-gradient(
-          circle at 80% 20%,
-          rgba(126,72,255,.25),
-          transparent 36%
+          circle at 78% 19%,
+          rgba(112,70,211,.13),
+          transparent 40%
         ),
         radial-gradient(
-          circle at 13% 90%,
-          rgba(21,219,189,.09),
-          transparent 32%
+          circle at 15% 88%,
+          rgba(40,155,112,.045),
+          transparent 38%
         ),
         linear-gradient(
           145deg,
-          #111124,
-          #08080d
+          #0e0e15,
+          #08080c
         );
 
       box-shadow:
-        0 30px 85px rgba(0,0,0,.38);
+        0 24px 70px rgba(0,0,0,.30);
 
       transform:
         perspective(1100px)
@@ -172,148 +135,107 @@
         box-shadow .3s ease;
     }
 
-
-
     .home-project-visual::before{
       content:"";
-
       position:absolute;
       inset:0;
-
       z-index:30;
-
       pointer-events:none;
 
       background:
         radial-gradient(
-          circle 180px
+          circle 170px
           at var(--hpmx,50%) var(--hpmy,50%),
-          rgba(255,255,255,.13),
-          transparent 72%
+          rgba(255,255,255,.09),
+          transparent 74%
         );
     }
 
-
-
     .home-project-visual::after{
       content:"";
-
       position:absolute;
       inset:0;
 
       background-image:
         linear-gradient(
-          rgba(255,255,255,.025) 1px,
+          rgba(255,255,255,.018) 1px,
           transparent 1px
         ),
         linear-gradient(
           90deg,
-          rgba(255,255,255,.025) 1px,
+          rgba(255,255,255,.018) 1px,
           transparent 1px
         );
 
-      background-size:
-        32px 32px;
+      background-size:32px 32px;
 
       mask-image:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,.90),
+          rgba(0,0,0,.85),
           transparent
         );
 
       pointer-events:none;
     }
 
-
-
     .home-project-visual svg{
       position:absolute;
       inset:0;
-
       width:100%;
       height:100%;
 
       transform:
-        translateZ(45px)
-        scale(1.03);
+        translateZ(42px)
+        scale(1.025);
 
-      transition:
-        transform .35s ease;
+      transition:transform .35s ease;
     }
-
-
 
     .home-project-3d:hover .home-project-visual{
       border-color:
-        rgba(145,91,255,.35);
+        rgba(132,91,218,.23);
 
       box-shadow:
-        0 42px 105px rgba(0,0,0,.48),
-        0 0 60px rgba(120,70,255,.12);
+        0 34px 82px rgba(0,0,0,.38),
+        0 0 38px rgba(108,70,190,.06);
     }
-
-
 
     .home-project-3d:hover .home-project-visual svg{
       transform:
-        translateZ(62px)
-        scale(1.055);
+        translateZ(56px)
+        scale(1.045);
     }
-
-
 
     .home-project-copy{
-      padding:
-        20px 5px 0;
+      padding:20px 5px 0;
     }
-
-
 
     .home-project-copy h3{
-      margin:
-        10px 0 8px;
-
-      font-size:
-        clamp(23px,2vw,31px);
+      margin:10px 0 8px;
+      font-size:clamp(23px,2vw,31px);
     }
-
-
 
     .home-project-copy p{
       line-height:1.65;
     }
 
-
-
     .home-project-link{
       display:inline-flex;
-
       align-items:center;
-
       gap:9px;
-
       margin-top:15px;
-
       font-size:13px;
       font-weight:700;
     }
 
-
-
     .home-project-link i{
       width:28px;
       height:28px;
-
       display:grid;
-
       place-items:center;
-
       border-radius:50%;
-
-      border:
-        1px solid rgba(255,255,255,.14);
-
+      border:1px solid rgba(255,255,255,.13);
       font-style:normal;
 
       transition:
@@ -321,91 +243,372 @@
         background .25s ease;
     }
 
-
-
-    .home-project-3d:hover
-    .home-project-link i{
-      transform:
-        translateX(4px);
-
-      background:
-        rgba(137,76,255,.16);
+    .home-project-3d:hover .home-project-link i{
+      transform:translateX(4px);
+      background:rgba(125,80,220,.11);
     }
 
 
+    /* =====================================================
+       3D MOVEMENT
+    ===================================================== */
 
     .hp-float-one{
-      animation:
-        hpFloatOne 5s ease-in-out infinite;
-
+      animation:hpFloatOne 5s ease-in-out infinite;
       transform-origin:center;
     }
-
-
 
     .hp-float-two{
-      animation:
-        hpFloatTwo 6.2s ease-in-out infinite;
-
+      animation:hpFloatTwo 6.2s ease-in-out infinite;
       transform-origin:center;
     }
-
-
 
     .hp-pulse{
-      animation:
-        hpPulse 3s ease-in-out infinite;
-
+      animation:hpPulse 3.4s ease-in-out infinite;
       transform-origin:center;
     }
 
-
-
     @keyframes hpFloatOne{
-
-      0%,100%{
-        transform:
-          translateY(0);
-      }
-
-      50%{
-        transform:
-          translateY(-8px);
-      }
-
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-7px)}
     }
-
-
 
     @keyframes hpFloatTwo{
-
-      0%,100%{
-        transform:
-          translateY(0);
-      }
-
-      50%{
-        transform:
-          translateY(7px);
-      }
-
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(6px)}
     }
-
-
 
     @keyframes hpPulse{
-
-      0%,100%{
-        opacity:.65;
-      }
-
-      50%{
-        opacity:1;
-      }
-
+      0%,100%{opacity:.7}
+      50%{opacity:1}
     }
 
 
+    /* =====================================================
+       3D INSIGHTS
+    ===================================================== */
+
+    .insights-3d-section{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .insights-3d-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+      margin-top:44px;
+    }
+
+    .insight-3d-card{
+      display:block;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#101016;
+      color:inherit;
+      text-decoration:none;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .insight-3d-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(131,89,213,.20);
+      box-shadow:0 25px 60px rgba(0,0,0,.30);
+    }
+
+    .insight-3d-visual{
+      position:relative;
+      height:255px;
+      overflow:hidden;
+
+      background:
+        radial-gradient(
+          circle at 70% 18%,
+          rgba(104,69,193,.11),
+          transparent 40%
+        ),
+        #09090e;
+    }
+
+    .insight-3d-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.014) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.014) 1px,
+          transparent 1px
+        );
+
+      background-size:28px 28px;
+      pointer-events:none;
+    }
+
+    .insight-3d-visual svg{
+      width:100%;
+      height:100%;
+      transition:transform .35s ease;
+    }
+
+    .insight-3d-card:hover .insight-3d-visual svg{
+      transform:scale(1.03);
+    }
+
+    .insight-3d-copy{
+      padding:18px 18px 20px;
+    }
+
+    .insight-3d-copy small{
+      color:#a88be2;
+      font-size:11px;
+    }
+
+    .insight-3d-copy h3{
+      margin:8px 0 12px;
+      font-size:clamp(17px,1.35vw,21px);
+      line-height:1.3;
+    }
+
+    .insight-3d-copy span{
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .insight-float{
+      animation:insightFloat 5s ease-in-out infinite;
+    }
+
+    .insight-float-alt{
+      animation:insightFloatAlt 6s ease-in-out infinite;
+    }
+
+    @keyframes insightFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-7px)}
+    }
+
+    @keyframes insightFloatAlt{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(6px)}
+    }
+
+
+    /* =====================================================
+       MAIN FORGE HAVEN STYLE FOOTER
+    ===================================================== */
+
+    .fh-main-footer{
+      position:relative;
+      padding:62px 0 28px;
+
+      border-top:
+        1px solid rgba(92,230,72,.08);
+
+      background:
+        radial-gradient(
+          circle at 18% 42%,
+          rgba(39,112,42,.13),
+          transparent 37%
+        ),
+        radial-gradient(
+          circle at 84% 42%,
+          rgba(30,67,28,.07),
+          transparent 35%
+        ),
+        #080a08;
+
+      overflow:hidden;
+    }
+
+    .fh-main-footer::before{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      height:115px;
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(54,217,69,.05) 0,
+          rgba(54,217,69,.05) 1px,
+          transparent 1px,
+          transparent 7px
+        );
+
+      opacity:.32;
+      mask-image:
+        linear-gradient(to bottom,#000,transparent);
+
+      pointer-events:none;
+    }
+
+    .fh-footer-shell{
+      position:relative;
+      z-index:2;
+    }
+
+    .fh-social-strip{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      padding-bottom:26px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .fh-social-strip a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      min-height:50px;
+      padding:0 16px;
+
+      border-radius:13px;
+
+      border:
+        1px solid rgba(109,235,85,.10);
+
+      background:
+        rgba(55,112,48,.08);
+
+      color:#efefef;
+      text-decoration:none;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+    }
+
+    .fh-social-strip a::after{
+      content:"→";
+      color:#65ef53;
+      font-weight:800;
+    }
+
+    .fh-social-strip a:hover{
+      transform:translateY(-2px);
+      background:rgba(62,130,52,.13);
+      border-color:rgba(104,239,82,.22);
+    }
+
+    .fh-footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:54px;
+      padding:30px 0 28px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .fh-footer-about h3,
+    .fh-footer-column h4{
+      margin:0 0 12px;
+      color:#f3f3f3;
+    }
+
+    .fh-footer-about p{
+      max-width:330px;
+      color:#aaa;
+      line-height:1.7;
+    }
+
+    .fh-footer-label{
+      margin-top:14px;
+      color:#777;
+      font-size:12px;
+    }
+
+    .fh-footer-email{
+      display:inline-block;
+      margin-top:7px;
+      color:#ddd;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .fh-footer-column h4{
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:13px;
+      color:#bdbdbd;
+    }
+
+    .fh-footer-column{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .fh-footer-column a{
+      margin:5px 0;
+      color:#b9b9b9;
+      text-decoration:none;
+      font-size:14px;
+
+      transition:color .2s ease;
+    }
+
+    .fh-footer-column a:hover{
+      color:#65ef53;
+    }
+
+    .fh-footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+      padding-top:22px;
+      color:#b5b5b5;
+      font-size:13px;
+    }
+
+    .fh-footer-bottom strong{
+      color:#65ef53;
+    }
+
+    .back-top{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:10px;
+      border:1px solid rgba(101,239,83,.24);
+      background:rgba(41,114,36,.12);
+      color:#72ef61;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width:950px){
+
+      .insights-3d-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .fh-footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
 
     @media(max-width:850px){
 
@@ -415,53 +618,71 @@
 
     }
 
-
-
     @media(max-width:650px){
 
       .home-project-3d-grid{
         gap:42px;
       }
 
-
       .home-project-visual{
         height:285px;
-
         transform:none !important;
       }
-
 
       .home-project-visual svg{
         transform:none !important;
       }
 
+      .insights-3d-grid{
+        grid-template-columns:1fr;
+      }
+
+      .insight-3d-visual{
+        height:230px;
+      }
+
+      .fh-social-strip{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .fh-footer-grid{
+        grid-template-columns:1fr;
+        gap:26px;
+      }
+
+      .fh-footer-bottom{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
     }
 
+    @media(max-width:430px){
 
+      .fh-social-strip{
+        grid-template-columns:1fr;
+      }
+
+    }
 
     @media(prefers-reduced-motion:reduce){
 
       .home-project-visual,
       .home-project-visual svg,
-      .home-project-visual svg *{
-
+      .home-project-visual svg *,
+      .insight-3d-visual svg *{
         animation:none !important;
-
         transform:none !important;
-
         transition:none !important;
       }
 
     }
 
   </style>
-
 </head>
 
 
-
-<body>
-
+<body id="top">
 
 
 <!-- =====================================================
@@ -500,22 +721,15 @@
       </a>
 
 
-
       <nav class="nav-links">
 
-
-        <a
-          class="active"
-          href="index.html"
-        >
+        <a class="active" href="index.html">
           Home
         </a>
-
 
         <a href="about.html">
           About
         </a>
-
 
 
         <div class="nav-drop">
@@ -523,7 +737,6 @@
           <button type="button">
             Pages ▾
           </button>
-
 
           <div class="drop-panel">
 
@@ -552,7 +765,6 @@
         </div>
 
 
-
         <a href="projects.html">
           Projects
         </a>
@@ -572,7 +784,6 @@
       </nav>
 
 
-
       <a
         class="btn"
         href="contact.html"
@@ -582,14 +793,12 @@
       </a>
 
 
-
       <button
         class="menu-toggle"
         aria-label="Toggle navigation"
       >
         ☰
       </button>
-
 
     </div>
 
@@ -600,7 +809,6 @@
 
 
 <main>
-
 
 
 <!-- =====================================================
@@ -626,12 +834,10 @@
   >
 
 
-
   <div
     class="hero-stage"
     aria-hidden="true"
   ></div>
-
 
 
   <div class="container hero-grid">
@@ -639,11 +845,9 @@
 
     <div class="reveal">
 
-
       <span class="kicker">
         Forge Haven LLC / Digital Marketing Division
       </span>
-
 
 
       <h1>
@@ -661,7 +865,6 @@
       </h1>
 
 
-
       <p class="lead">
 
         Performance media, search, social,
@@ -670,7 +873,6 @@
         collection of disconnected services.
 
       </p>
-
 
 
       <div class="hero-actions">
@@ -682,7 +884,6 @@
           Explore capabilities ↗
         </a>
 
-
         <a
           class="btn ghost"
           href="contact.html"
@@ -692,9 +893,7 @@
 
       </div>
 
-
     </div>
-
 
 
     <div class="hero-art reveal">
@@ -707,76 +906,51 @@
       >
 
 
-
       <span class="float-pill p1">
 
-        <b>
-          Paid Media
-        </b>
-
+        <b>Paid Media</b>
         <br>
-
         Acquire demand
 
       </span>
 
 
-
       <span class="float-pill p2">
 
-        <b>
-          Search
-        </b>
-
+        <b>Search</b>
         <br>
-
         Capture intent
 
       </span>
 
 
-
       <span class="float-pill p3">
 
-        <b>
-          CRM
-        </b>
-
+        <b>CRM</b>
         <br>
-
         Nurture retention
 
       </span>
 
 
-
       <span class="float-pill p4">
 
-        <b>
-          Analytics
-        </b>
-
+        <b>Analytics</b>
         <br>
-
         Measure impact
 
       </span>
 
-
     </div>
-
 
   </div>
 
 
-
   <div class="trust-strip">
-
 
     <span>
       CHANNEL ECOSYSTEM
     </span>
-
 
     <div class="channel-list">
 
@@ -789,9 +963,7 @@
 
     </div>
 
-
   </div>
-
 
 </section>
 
@@ -808,11 +980,9 @@
 
     <div class="reveal">
 
-
       <span class="kicker">
         Who we are
       </span>
-
 
 
       <h2>
@@ -828,7 +998,6 @@
       </h2>
 
 
-
       <p class="lead">
 
         Forge Digital operates as a specialized
@@ -841,7 +1010,6 @@
       </p>
 
 
-
       <a
         class="btn dark"
         href="about.html"
@@ -849,19 +1017,15 @@
         About the division ↗
       </a>
 
-
     </div>
 
 
-
     <div class="media-frame reveal">
-
 
       <img
         src="assets/foyej.jpg"
         alt="Foyej Ullah"
       >
-
 
       <div class="team-info">
 
@@ -875,9 +1039,7 @@
 
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -896,12 +1058,9 @@
 
     <div class="reveal">
 
-
       <span class="kicker">
         Capabilities
       </span>
-
-
 
       <h2>
 
@@ -915,13 +1074,10 @@
 
       </h2>
 
-
     </div>
 
 
-
     <div class="service-list reveal">
-
 
 
       <a
@@ -929,36 +1085,21 @@
         href="services.html#paid"
       >
 
-        <span class="star">
-          ✳
-        </span>
+        <span class="star">✳</span>
 
         <h3>
           Paid Advertising
         </h3>
 
         <ul>
-
-          <li>
-            Meta Ads
-          </li>
-
-          <li>
-            Google Ads
-          </li>
-
-          <li>
-            Retargeting
-          </li>
-
+          <li>Meta Ads</li>
+          <li>Google Ads</li>
+          <li>Retargeting</li>
         </ul>
 
-        <span class="round-go">
-          ↗
-        </span>
+        <span class="round-go">↗</span>
 
       </a>
-
 
 
       <a
@@ -966,36 +1107,21 @@
         href="services.html#seo"
       >
 
-        <span class="star">
-          ✳
-        </span>
+        <span class="star">✳</span>
 
         <h3>
           SEO &amp; Search
         </h3>
 
         <ul>
-
-          <li>
-            Technical SEO
-          </li>
-
-          <li>
-            Content SEO
-          </li>
-
-          <li>
-            Local Search
-          </li>
-
+          <li>Technical SEO</li>
+          <li>Content SEO</li>
+          <li>Local Search</li>
         </ul>
 
-        <span class="round-go">
-          ↗
-        </span>
+        <span class="round-go">↗</span>
 
       </a>
-
 
 
       <a
@@ -1003,36 +1129,21 @@
         href="services.html#social"
       >
 
-        <span class="star">
-          ✳
-        </span>
+        <span class="star">✳</span>
 
         <h3>
           Social Marketing
         </h3>
 
         <ul>
-
-          <li>
-            Strategy
-          </li>
-
-          <li>
-            Publishing
-          </li>
-
-          <li>
-            Community
-          </li>
-
+          <li>Strategy</li>
+          <li>Publishing</li>
+          <li>Community</li>
         </ul>
 
-        <span class="round-go">
-          ↗
-        </span>
+        <span class="round-go">↗</span>
 
       </a>
-
 
 
       <a
@@ -1040,36 +1151,21 @@
         href="services.html#crm"
       >
 
-        <span class="star">
-          ✳
-        </span>
+        <span class="star">✳</span>
 
         <h3>
           Email &amp; CRM
         </h3>
 
         <ul>
-
-          <li>
-            Automation
-          </li>
-
-          <li>
-            Nurture
-          </li>
-
-          <li>
-            Retention
-          </li>
-
+          <li>Automation</li>
+          <li>Nurture</li>
+          <li>Retention</li>
         </ul>
 
-        <span class="round-go">
-          ↗
-        </span>
+        <span class="round-go">↗</span>
 
       </a>
-
 
 
       <a
@@ -1077,39 +1173,23 @@
         href="services.html#analytics"
       >
 
-        <span class="star">
-          ✳
-        </span>
+        <span class="star">✳</span>
 
         <h3>
           Analytics &amp; CRO
         </h3>
 
         <ul>
-
-          <li>
-            GA4
-          </li>
-
-          <li>
-            Funnels
-          </li>
-
-          <li>
-            Landing pages
-          </li>
-
+          <li>GA4</li>
+          <li>Funnels</li>
+          <li>Landing Pages</li>
         </ul>
 
-        <span class="round-go">
-          ↗
-        </span>
+        <span class="round-go">↗</span>
 
       </a>
 
-
     </div>
-
 
   </div>
 
@@ -1118,7 +1198,7 @@
 
 
 <!-- =====================================================
-     NEW 3D FEATURED PROJECTS
+     3D FEATURED PROJECTS
 ===================================================== -->
 
 <section class="section home-project-showcase">
@@ -1128,11 +1208,9 @@
 
     <div class="home-project-intro reveal">
 
-
       <span class="kicker">
         Featured Digital Projects
       </span>
-
 
 
       <h2>
@@ -1146,7 +1224,6 @@
       </h2>
 
 
-
       <p class="lead">
 
         Explore how Forge Digital structures
@@ -1156,18 +1233,13 @@
 
       </p>
 
-
     </div>
-
 
 
     <div class="home-project-3d-grid">
 
 
-
-      <!-- =================================================
-           PROJECT 01
-      ================================================== -->
+      <!-- PROJECT 01 -->
 
       <a
         class="home-project-3d reveal"
@@ -1178,116 +1250,44 @@
         <div class="home-project-visual">
 
 
-          <svg
-            viewBox="0 0 700 430"
-            aria-label="3D performance marketing project"
-          >
+          <svg viewBox="0 0 700 430">
 
 
             <defs>
 
-
-              <linearGradient
-                id="homePaidScreen"
-                x1="0"
-                x2="1"
-              >
-
-                <stop
-                  stop-color="#202c79"
-                />
-
-                <stop
-                  offset="1"
-                  stop-color="#5525a5"
-                />
-
+              <linearGradient id="homePaidScreen" x1="0" x2="1">
+                <stop stop-color="#202c79"/>
+                <stop offset="1" stop-color="#5525a5"/>
               </linearGradient>
 
-
-
-              <linearGradient
-                id="homePaidPink"
-                x1="0"
-                x2="1"
-              >
-
-                <stop
-                  stop-color="#ff4d91"
-                />
-
-                <stop
-                  offset="1"
-                  stop-color="#ff7b48"
-                />
-
+              <linearGradient id="homePaidPink" x1="0" x2="1">
+                <stop stop-color="#ff4d91"/>
+                <stop offset="1" stop-color="#ff7b48"/>
               </linearGradient>
 
-
-
-              <linearGradient
-                id="homePaidBlue"
-                x1="0"
-                x2="1"
-              >
-
-                <stop
-                  stop-color="#12ddd0"
-                />
-
-                <stop
-                  offset="1"
-                  stop-color="#3f64ff"
-                />
-
+              <linearGradient id="homePaidBlue" x1="0" x2="1">
+                <stop stop-color="#12ddd0"/>
+                <stop offset="1" stop-color="#3f64ff"/>
               </linearGradient>
-
 
             </defs>
 
 
-
-            <!-- MAIN BROWSER -->
-
             <g class="hp-float-one">
-
 
               <polygon
                 points="105,76 503,68 503,295 105,307"
                 fill="#101642"
               />
 
-
               <polygon
                 points="127,96 483,89 483,274 127,284"
                 fill="url(#homePaidScreen)"
               />
 
-
-              <circle
-                cx="147"
-                cy="108"
-                r="5"
-                fill="#ff4d91"
-              />
-
-
-              <circle
-                cx="164"
-                cy="108"
-                r="5"
-                fill="#ffc353"
-              />
-
-
-              <circle
-                cx="181"
-                cy="107"
-                r="5"
-                fill="#58df65"
-              />
-
-
+              <circle cx="147" cy="108" r="5" fill="#ff4d91"/>
+              <circle cx="164" cy="108" r="5" fill="#ffc353"/>
+              <circle cx="181" cy="107" r="5" fill="#58df65"/>
 
               <rect
                 x="161"
@@ -1299,8 +1299,6 @@
                 opacity=".82"
               />
 
-
-
               <rect
                 x="161"
                 y="174"
@@ -1310,8 +1308,6 @@
                 fill="#fff"
                 opacity=".26"
               />
-
-
 
               <rect
                 x="161"
@@ -1323,8 +1319,6 @@
                 opacity=".18"
               />
 
-
-
               <rect
                 x="161"
                 y="234"
@@ -1334,22 +1328,15 @@
                 fill="#834cff"
               />
 
-
             </g>
 
 
-
-            <!-- FLOATING CAMPAIGN CARD -->
-
             <g class="hp-float-two">
-
 
               <polygon
                 points="453,146 619,127 619,257 453,276"
                 fill="#171c56"
               />
-
-
 
               <circle
                 cx="502"
@@ -1357,8 +1344,6 @@
                 r="28"
                 fill="url(#homePaidPink)"
               />
-
-
 
               <rect
                 x="542"
@@ -1370,8 +1355,6 @@
                 opacity=".75"
               />
 
-
-
               <rect
                 x="542"
                 y="182"
@@ -1382,8 +1365,6 @@
                 opacity=".28"
               />
 
-
-
               <rect
                 x="478"
                 y="224"
@@ -1393,22 +1374,15 @@
                 fill="url(#homePaidBlue)"
               />
 
-
             </g>
 
 
-
-            <!-- ANALYTICS PANEL -->
-
             <g class="hp-pulse">
-
 
               <polygon
                 points="104,321 314,306 314,391 104,405"
                 fill="#171c4e"
               />
-
-
 
               <polyline
                 points="132,370 166,344 198,354 238,319 280,329"
@@ -1417,8 +1391,6 @@
                 stroke-width="7"
               />
 
-
-
               <circle
                 cx="238"
                 cy="319"
@@ -1426,86 +1398,62 @@
                 fill="#ff4d91"
               />
 
-
             </g>
 
 
-
-            <!-- FLOATING CUBE -->
-
             <g class="hp-float-one">
-
 
               <polygon
                 points="572,319 615,309 635,329 590,341"
                 fill="#6a44ff"
               />
 
-
               <polygon
                 points="590,341 635,329 635,369 590,381"
                 fill="#232d79"
               />
-
 
               <polygon
                 points="572,319 590,341 590,381 572,359"
                 fill="#14d9ca"
               />
 
-
             </g>
 
 
           </svg>
 
-
         </div>
 
 
-
         <div class="home-project-copy">
-
 
           <span class="kicker">
             Performance Marketing
           </span>
 
-
-
           <h3>
             Product Launch Campaign System
           </h3>
-
-
 
           <p class="muted">
             Paid media · creative testing · landing journey · measurement
           </p>
 
-
-
           <span class="home-project-link">
 
             Explore project
 
-            <i>
-              ↗
-            </i>
+            <i>↗</i>
 
           </span>
 
-
         </div>
-
 
       </a>
 
 
-
-      <!-- =================================================
-           PROJECT 02
-      ================================================== -->
+      <!-- PROJECT 02 -->
 
       <a
         class="home-project-3d reveal"
@@ -1516,73 +1464,35 @@
         <div class="home-project-visual">
 
 
-          <svg
-            viewBox="0 0 700 430"
-            aria-label="3D SEO project"
-          >
+          <svg viewBox="0 0 700 430">
 
 
             <defs>
 
-
-              <linearGradient
-                id="homeSeoPanel"
-                x1="0"
-                x2="1"
-              >
-
-                <stop
-                  stop-color="#172166"
-                />
-
-                <stop
-                  offset="1"
-                  stop-color="#38218e"
-                />
-
+              <linearGradient id="homeSeoPanel" x1="0" x2="1">
+                <stop stop-color="#172166"/>
+                <stop offset="1" stop-color="#38218e"/>
               </linearGradient>
 
-
-
-              <linearGradient
-                id="homeSeoLine"
-                x1="0"
-                x2="1"
-              >
-
-                <stop
-                  stop-color="#15dfd0"
-                />
-
-                <stop
-                  offset="1"
-                  stop-color="#7351ff"
-                />
-
+              <linearGradient id="homeSeoLine" x1="0" x2="1">
+                <stop stop-color="#15dfd0"/>
+                <stop offset="1" stop-color="#7351ff"/>
               </linearGradient>
-
 
             </defs>
 
 
-
-            <!-- SEARCH DASHBOARD -->
-
             <g class="hp-float-one">
-
 
               <polygon
                 points="101,84 519,69 519,302 101,317"
                 fill="#10163f"
               />
 
-
               <polygon
                 points="124,105 496,92 496,279 124,292"
                 fill="url(#homeSeoPanel)"
               />
-
-
 
               <rect
                 x="158"
@@ -1594,8 +1504,6 @@
                 opacity=".83"
               />
 
-
-
               <circle
                 cx="411"
                 cy="145"
@@ -1604,8 +1512,6 @@
                 stroke="url(#homeSeoLine)"
                 stroke-width="13"
               />
-
-
 
               <line
                 x1="431"
@@ -1617,8 +1523,6 @@
                 stroke-linecap="round"
               />
 
-
-
               <rect
                 x="158"
                 y="183"
@@ -1628,8 +1532,6 @@
                 fill="#fff"
                 opacity=".26"
               />
-
-
 
               <rect
                 x="158"
@@ -1641,8 +1543,6 @@
                 opacity=".19"
               />
 
-
-
               <rect
                 x="158"
                 y="237"
@@ -1653,22 +1553,15 @@
                 opacity=".14"
               />
 
-
             </g>
 
 
-
-            <!-- RANKING CARD -->
-
             <g class="hp-float-two">
-
 
               <polygon
                 points="478,312 604,295 604,374 478,390"
                 fill="#1a205e"
               />
-
-
 
               <text
                 x="500"
@@ -1680,8 +1573,6 @@
                 #1
               </text>
 
-
-
               <rect
                 x="548"
                 y="331"
@@ -1691,22 +1582,15 @@
                 fill="#16dfcf"
               />
 
-
             </g>
 
 
-
-            <!-- SEARCH GRAPH -->
-
             <g class="hp-pulse">
-
 
               <polygon
                 points="98,332 240,318 240,393 98,406"
                 fill="#191f55"
               />
-
-
 
               <polyline
                 points="121,377 152,360 179,369 210,337"
@@ -1715,15 +1599,10 @@
                 stroke-width="7"
               />
 
-
             </g>
 
 
-
-            <!-- FLOATING SEARCH NODE -->
-
             <g class="hp-float-one">
-
 
               <circle
                 cx="609"
@@ -1731,7 +1610,6 @@
                 r="38"
                 fill="#24216a"
               />
-
 
               <circle
                 cx="601"
@@ -1741,7 +1619,6 @@
                 stroke="#15dfd0"
                 stroke-width="8"
               />
-
 
               <line
                 x1="613"
@@ -1753,62 +1630,44 @@
                 stroke-linecap="round"
               />
 
-
             </g>
 
 
           </svg>
 
-
         </div>
 
 
-
         <div class="home-project-copy">
-
 
           <span class="kicker">
             Search Visibility
           </span>
 
-
-
           <h3>
             Organic Search Growth Framework
           </h3>
-
-
 
           <p class="muted">
             SEO · keyword strategy · technical foundations · local search
           </p>
 
-
-
           <span class="home-project-link">
 
             Explore project
 
-            <i>
-              ↗
-            </i>
+            <i>↗</i>
 
           </span>
 
-
         </div>
 
-
       </a>
-
 
     </div>
 
 
-
-    <div
-      style="text-align:center;margin-top:36px"
-    >
+    <div style="text-align:center;margin-top:36px">
 
       <a
         class="btn purple"
@@ -1818,7 +1677,6 @@
       </a>
 
     </div>
-
 
   </div>
 
@@ -1837,12 +1695,9 @@
 
     <div class="reveal">
 
-
       <span class="kicker">
         Process
       </span>
-
-
 
       <h2>
 
@@ -1854,13 +1709,10 @@
 
       </h2>
 
-
     </div>
 
 
-
     <div class="process">
-
 
 
       <div
@@ -1875,17 +1727,14 @@
           </h3>
 
           <p>
-
             Audience, offer, competition,
             current channels and measurement
             readiness.
-
           </p>
 
         </div>
 
       </div>
-
 
 
       <div
@@ -1900,17 +1749,14 @@
           </h3>
 
           <p>
-
             Channel mix, campaign architecture,
             creative requirements and funnel
             priorities.
-
           </p>
 
         </div>
 
       </div>
-
 
 
       <div
@@ -1925,17 +1771,14 @@
           </h3>
 
           <p>
-
             Controlled deployment, tracking
             validation, creative testing and
             early signal review.
-
           </p>
 
         </div>
 
       </div>
-
 
 
       <div
@@ -1950,19 +1793,15 @@
           </h3>
 
           <p>
-
             Budget allocation, CRO, remarketing,
             lifecycle messaging and reporting.
-
           </p>
 
         </div>
 
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -1984,11 +1823,9 @@
       style="text-align:center;max-width:760px;margin:auto"
     >
 
-
       <span class="kicker">
         2026-ready operations
       </span>
-
 
 
       <h2>
@@ -2004,7 +1841,6 @@
       </h2>
 
 
-
       <p
         class="lead"
         style="margin:18px auto"
@@ -2017,16 +1853,12 @@
 
       </p>
 
-
     </div>
-
 
 
     <div class="ai-map reveal">
 
-
       <div class="ai-line"></div>
-
 
 
       <div class="ai-node n1">
@@ -2043,7 +1875,6 @@
       </div>
 
 
-
       <div class="ai-node n2">
 
         <h4>
@@ -2058,13 +1889,11 @@
       </div>
 
 
-
       <div class="ai-center">
         FORGE
         <br>
         AI
       </div>
-
 
 
       <div class="ai-node n3">
@@ -2081,7 +1910,6 @@
       </div>
 
 
-
       <div class="ai-node n4">
 
         <h4>
@@ -2095,9 +1923,7 @@
 
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -2116,11 +1942,9 @@
 
     <div class="reveal">
 
-
       <span class="kicker">
         Digital Marketing Team
       </span>
-
 
 
       <h2>
@@ -2136,7 +1960,6 @@
       </h2>
 
 
-
       <p class="lead">
 
         Our Digital Marketing team combines
@@ -2146,25 +1969,18 @@
 
       </p>
 
-
     </div>
-
 
 
     <div class="team-grid">
 
 
-
-      <!-- FARHAD -->
-
       <article class="team-card reveal">
-
 
         <img
           src="../../images/Forhadmarketinglead1.jpg"
           alt="Md Farhad Hossain"
         >
-
 
         <div class="team-info">
 
@@ -2178,21 +1994,15 @@
 
         </div>
 
-
       </article>
 
 
-
-      <!-- SOJIB -->
-
       <article class="team-card reveal">
-
 
         <img
           src="../../images/sojibhossenlead1.jpg"
           alt="Md Sojib Hossen"
         >
-
 
         <div class="team-info">
 
@@ -2206,17 +2016,12 @@
 
         </div>
 
-
       </article>
-
 
     </div>
 
 
-
-    <div
-      style="text-align:center;margin-top:25px"
-    >
+    <div style="text-align:center;margin-top:25px">
 
       <a
         class="btn dark"
@@ -2227,7 +2032,6 @@
 
     </div>
 
-
   </div>
 
 </section>
@@ -2235,21 +2039,19 @@
 
 
 <!-- =====================================================
-     INSIGHTS
+     3D INSIGHTS — NO RANDOM PEOPLE PHOTOS
 ===================================================== -->
 
-<section class="section">
+<section class="section insights-3d-section">
 
   <div class="container">
 
 
     <div class="reveal">
 
-
       <span class="kicker">
         Insights
       </span>
-
 
 
       <h2>
@@ -2262,150 +2064,418 @@
 
       </h2>
 
-
     </div>
 
 
-
-    <div
-      class="blog-grid"
-      style="margin-top:45px"
-    >
+    <div class="insights-3d-grid">
 
 
+      <!-- INSIGHT 01 -->
 
-      <article
-        class="blog-card reveal"
-        data-cat="strategy"
+      <a
+        class="insight-3d-card reveal"
+        href="blog-details.html"
       >
 
 
-        <div class="blog-img">
+        <div class="insight-3d-visual">
 
-          <img
-            src="assets/temp-1.jpg"
-            alt="Temporary blog photo"
-          >
+
+          <svg viewBox="0 0 620 350">
+
+
+            <defs>
+
+              <linearGradient id="insightGrowthA" x1="0" x2="1">
+
+                <stop stop-color="#6f42ff"/>
+
+                <stop
+                  offset="1"
+                  stop-color="#19d7c8"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+
+            <polygon
+              points="105,75 475,62 475,270 105,283"
+              fill="#121642"
+            />
+
+
+            <polygon
+              points="128,98 451,87 451,247 128,258"
+              fill="#1b215a"
+            />
+
+
+            <rect
+              x="157"
+              y="126"
+              width="123"
+              height="12"
+              rx="6"
+              fill="#fff"
+              opacity=".72"
+            />
+
+
+            <rect
+              x="157"
+              y="154"
+              width="176"
+              height="8"
+              rx="4"
+              fill="#fff"
+              opacity=".22"
+            />
+
+
+            <polyline
+              points="159,221 205,194 247,205 292,164 339,175 398,121"
+              fill="none"
+              stroke="url(#insightGrowthA)"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+
+            <circle
+              cx="398"
+              cy="121"
+              r="10"
+              fill="#65ef53"
+            />
+
+
+            <g class="insight-float">
+
+              <polygon
+                points="427,197 526,182 526,255 427,270"
+                fill="#242266"
+              />
+
+
+              <rect
+                x="448"
+                y="207"
+                width="51"
+                height="8"
+                rx="4"
+                fill="#fff"
+                opacity=".55"
+              />
+
+
+              <rect
+                x="448"
+                y="229"
+                width="34"
+                height="7"
+                rx="3"
+                fill="#14d8ca"
+              />
+
+            </g>
+
+
+          </svg>
 
         </div>
 
 
-
-        <div class="blog-copy">
-
+        <div class="insight-3d-copy">
 
           <small>
             Growth Strategy · 2026
           </small>
 
-
           <h3>
             How to build a measurable digital marketing system
           </h3>
 
-
-          <a href="blog-details.html">
+          <span>
             Read insight ↗
-          </a>
-
+          </span>
 
         </div>
 
-
-      </article>
-
+      </a>
 
 
-      <article
-        class="blog-card reveal"
-        data-cat="seo"
+      <!-- INSIGHT 02 -->
+
+      <a
+        class="insight-3d-card reveal"
+        href="blog-details.html"
       >
 
 
-        <div class="blog-img">
+        <div class="insight-3d-visual">
 
-          <img
-            src="assets/temp-2.jpg"
-            alt="Temporary blog photo"
-          >
+
+          <svg viewBox="0 0 620 350">
+
+
+            <defs>
+
+              <linearGradient id="insightSeoA" x1="0" x2="1">
+
+                <stop stop-color="#18dfce"/>
+
+                <stop
+                  offset="1"
+                  stop-color="#7147ff"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+
+            <polygon
+              points="99,78 463,65 463,268 99,281"
+              fill="#101642"
+            />
+
+
+            <polygon
+              points="122,100 440,89 440,246 122,257"
+              fill="#1a2057"
+            />
+
+
+            <rect
+              x="151"
+              y="125"
+              width="198"
+              height="18"
+              rx="9"
+              fill="#fff"
+              opacity=".76"
+            />
+
+
+            <circle
+              cx="376"
+              cy="134"
+              r="31"
+              fill="none"
+              stroke="url(#insightSeoA)"
+              stroke-width="14"
+            />
+
+
+            <line
+              x1="399"
+              y1="157"
+              x2="428"
+              y2="186"
+              stroke="#66ef53"
+              stroke-width="14"
+              stroke-linecap="round"
+            />
+
+
+            <rect
+              x="151"
+              y="176"
+              width="177"
+              height="8"
+              rx="4"
+              fill="#fff"
+              opacity=".22"
+            />
+
+
+            <rect
+              x="151"
+              y="201"
+              width="140"
+              height="8"
+              rx="4"
+              fill="#fff"
+              opacity=".16"
+            />
+
+
+            <g class="insight-float-alt">
+
+              <polygon
+                points="437,208 529,192 529,264 437,279"
+                fill="#211d66"
+              />
+
+
+              <text
+                x="458"
+                y="247"
+                fill="#fff"
+                font-size="28"
+                font-weight="800"
+              >
+                #1
+              </text>
+
+            </g>
+
+
+          </svg>
 
         </div>
 
 
-
-        <div class="blog-copy">
-
+        <div class="insight-3d-copy">
 
           <small>
             Search · 2026
           </small>
 
-
           <h3>
             SEO after AI search: what still compounds
           </h3>
 
-
-          <a href="blog-details.html">
+          <span>
             Read insight ↗
-          </a>
-
+          </span>
 
         </div>
 
-
-      </article>
-
+      </a>
 
 
-      <article
-        class="blog-card reveal"
-        data-cat="paid"
+      <!-- INSIGHT 03 -->
+
+      <a
+        class="insight-3d-card reveal"
+        href="blog-details.html"
       >
 
 
-        <div class="blog-img">
+        <div class="insight-3d-visual">
 
-          <img
-            src="assets/analytics.svg"
-            alt="Analytics visual"
-          >
+
+          <svg viewBox="0 0 620 350">
+
+
+            <defs>
+
+              <linearGradient id="insightPaidA" x1="0" x2="1">
+
+                <stop stop-color="#7048ff"/>
+
+                <stop
+                  offset="1"
+                  stop-color="#ff4d91"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+
+            <polygon
+              points="112,84 483,68 483,266 112,282"
+              fill="#111642"
+            />
+
+
+            <polygon
+              points="135,105 460,92 460,244 135,257"
+              fill="#1b2058"
+            />
+
+
+            <rect
+              x="163"
+              y="211"
+              width="43"
+              height="29"
+              rx="7"
+              fill="#7b49ff"
+            />
+
+
+            <rect
+              x="227"
+              y="180"
+              width="43"
+              height="60"
+              rx="7"
+              fill="#6546ff"
+            />
+
+
+            <rect
+              x="291"
+              y="146"
+              width="43"
+              height="94"
+              rx="7"
+              fill="#4a5cff"
+            />
+
+
+            <rect
+              x="355"
+              y="114"
+              width="43"
+              height="126"
+              rx="7"
+              fill="#18d9cb"
+            />
+
+
+            <polyline
+              points="156,203 213,183 260,194 319,146 371,154 421,109"
+              fill="none"
+              stroke="url(#insightPaidA)"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+
+
+            <circle
+              cx="421"
+              cy="109"
+              r="9"
+              fill="#65ef53"
+            />
+
+
+          </svg>
 
         </div>
 
 
-
-        <div class="blog-copy">
-
+        <div class="insight-3d-copy">
 
           <small>
             Paid Media · 2026
           </small>
 
-
           <h3>
             Creative testing without wasting ad budget
           </h3>
 
-
-          <a href="blog-details.html">
+          <span>
             Read insight ↗
-          </a>
-
+          </span>
 
         </div>
 
-
-      </article>
+      </a>
 
 
     </div>
 
-
   </div>
 
 </section>
-
 
 
 </main>
@@ -2423,11 +2493,9 @@
 
     <div>
 
-
       <span class="kicker">
         Start a conversation
       </span>
-
 
 
       <h2>
@@ -2441,9 +2509,7 @@
 
       </h2>
 
-
     </div>
-
 
 
     <a
@@ -2453,12 +2519,9 @@
 
       Start a campaign
 
-      <span>
-        ↗
-      </span>
+      <span>↗</span>
 
     </a>
-
 
   </div>
 
@@ -2467,238 +2530,200 @@
 
 
 <!-- =====================================================
-     FOOTER
+     MAIN FORGE HAVEN STYLE FOOTER
 ===================================================== -->
 
-<footer class="site-footer">
+<footer class="fh-main-footer">
 
-  <div class="container">
-
-
-
-    <div class="newsletter">
+  <div class="container fh-footer-shell">
 
 
-      <div>
+    <!-- SOCIAL STRIP -->
 
+    <div class="fh-social-strip">
 
-        <h3>
-          JOIN WITH US
-        </h3>
-
-
-        <p class="muted">
-          Get occasional Forge Digital updates and insights.
-        </p>
-
-
-      </div>
-
-
-
-      <form
-        class="newsletter-form"
-        id="newsletterForm"
+      <a
+        href="https://www.facebook.com/forgehavenllc"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        Facebook
+      </a>
 
 
-        <input
-          type="email"
-          placeholder="Email address"
-          required
-        >
+      <a
+        href="https://twitter.com/forgehavenllc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Twitter
+      </a>
 
 
-        <button aria-label="Subscribe">
-          ↗
-        </button>
+      <a
+        href="https://www.youtube.com/@forgehavenllc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        YouTube
+      </a>
 
 
-      </form>
-
+      <a
+        href="https://www.instagram.com/forgehavenllc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
 
     </div>
 
 
 
-    <div class="footer-grid">
+    <!-- MAIN FOOTER GRID -->
+
+    <div class="fh-footer-grid">
 
 
+      <div class="fh-footer-about">
 
-      <div class="footer-brand">
-
-
-        <img
-          src="assets/logo.png"
-          alt="Forge Haven"
-        >
+        <h3>
+          Forge Haven LLC
+        </h3>
 
 
         <p>
 
-          Forge Digital is the Digital Marketing
-          Division of Forge Haven LLC, focused on
-          measurable growth, creative distribution
-          and customer journeys.
+          A multi-sector operating company spanning
+          technology, commerce, creative, and
+          property-focused services.
 
         </p>
 
 
-
-        <div class="socials">
-
-
-          <a
-            href="https://www.facebook.com/forgehavenllc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            f
-          </a>
-
-
-
-          <a
-            href="https://twitter.com/forgehavenllc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            𝕏
-          </a>
-
-
-
-          <a
-            href="https://www.instagram.com/forgehavenllc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ◎
-          </a>
-
-
-
-          <a
-            href="https://www.youtube.com/@forgehavenllc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ▶
-          </a>
-
-
+        <div class="fh-footer-label">
+          Help Email
         </div>
 
 
-      </div>
-
-
-
-      <div class="footer-col">
-
-
-        <h4>
-          Quick Links
-        </h4>
-
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-        <a href="blog.html">
-          Blog
-        </a>
-
-        <a href="projects.html">
-          Projects
-        </a>
-
-
-      </div>
-
-
-
-      <div class="footer-col">
-
-
-        <h4>
-          Capabilities
-        </h4>
-
-
-        <a href="services.html#paid">
-          Paid Media
-        </a>
-
-
-        <a href="services.html#seo">
-          SEO
-        </a>
-
-
-        <a href="services.html#social">
-          Social Marketing
-        </a>
-
-
-        <a href="services.html#crm">
-          Email &amp; CRM
-        </a>
-
-
-        <a href="services.html#analytics">
-          Analytics &amp; CRO
-        </a>
-
-
-      </div>
-
-
-
-      <div class="footer-col">
-
-
-        <h4>
-          Contact
-        </h4>
-
-
-        <a href="mailto:help@forgehavenllc.org">
+        <a
+          class="fh-footer-email"
+          href="mailto:help@forgehavenllc.org"
+        >
           help@forgehavenllc.org
         </a>
 
+      </div>
 
-        <a href="tel:+8801639444747">
-          +880 1639 444747
+
+
+      <div class="fh-footer-column">
+
+        <h4>
+          Company
+        </h4>
+
+
+        <a href="https://forgehavenllc.org/">
+          Home
+        </a>
+
+
+        <a href="https://forgehavenllc.org/#sectors">
+          Business Sectors
+        </a>
+
+
+        <a href="https://forgehavenllc.org/#capabilities">
+          Capabilities
+        </a>
+
+
+        <a href="https://forgehavenllc.org/#team">
+          Team
+        </a>
+
+
+        <a href="https://forgehavenllc.org/contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+
+      <div class="fh-footer-column">
+
+        <h4>
+          Support
+        </h4>
+
+
+        <a href="https://forgehavenllc.org/contact.html">
+          Help Center
+        </a>
+
+
+        <a href="https://forgehavenllc.org/contact.html">
+          Support Request
+        </a>
+
+
+        <a href="contact.html">
+          Service Inquiry
+        </a>
+
+
+        <a href="https://forgehavenllc.org/contact.html">
+          Feedback
+        </a>
+
+      </div>
+
+
+
+      <div class="fh-footer-column">
+
+        <h4>
+          Social
+        </h4>
+
+
+        <a
+          href="https://www.facebook.com/forgehavenllc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
         </a>
 
 
         <a
-          href="https://wa.me/8801639444747"
+          href="https://twitter.com/forgehavenllc"
           target="_blank"
           rel="noopener noreferrer"
         >
-          WhatsApp inquiry
+          Twitter (@forgehavenllc)
         </a>
 
 
         <a
-          href="https://forgehavenllc.org"
+          href="https://www.youtube.com/@forgehavenllc"
           target="_blank"
           rel="noopener noreferrer"
         >
-          forgehavenllc.org
+          YouTube
         </a>
 
+
+        <a
+          href="https://www.instagram.com/forgehavenllc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
 
       </div>
 
@@ -2707,30 +2732,34 @@
 
 
 
-    <div class="footer-bottom">
+    <!-- COPYRIGHT -->
+
+    <div class="fh-footer-bottom">
 
 
-      <span>
-        Created By Foyej Ullah © Forge Haven
-      </span>
+      <div>
+
+        © 2026
+        <strong>
+          Forge Haven LLC.
+        </strong>
+        All rights reserved.
+
+      </div>
 
 
-      <span>
-        © 2026 Forge Haven LLC · Digital Marketing Division
-      </span>
+      <a
+        class="back-top"
+        href="#top"
+      >
+        ↑ Back to top
+      </a>
 
 
     </div>
 
 
   </div>
-
-
-
-  <div
-    class="footer-depth"
-    aria-hidden="true"
-  ></div>
 
 </footer>
 
@@ -2744,13 +2773,12 @@
 
 
 <!-- =====================================================
-     HOMEPAGE PROJECT 3D INTERACTION
+     HOMEPAGE 3D PROJECT INTERACTION
 ===================================================== -->
 
 <script>
 
 (() => {
-
 
   const canTilt =
     window.matchMedia(
@@ -2758,17 +2786,13 @@
     ).matches;
 
 
-
   if(!canTilt){
     return;
   }
 
 
-
   document
-    .querySelectorAll(
-      ".home-project-3d"
-    )
+    .querySelectorAll(".home-project-3d")
     .forEach(card => {
 
 
@@ -2783,7 +2807,6 @@
       }
 
 
-
       card.addEventListener(
         "mousemove",
         event => {
@@ -2793,39 +2816,28 @@
             visual.getBoundingClientRect();
 
 
-
-          const x =
-            event.clientX -
-            rect.left;
-
-
-
-          const y =
-            event.clientY -
-            rect.top;
-
-
-
           const px =
-            x /
+            (
+              event.clientX -
+              rect.left
+            ) /
             rect.width;
 
 
-
           const py =
-            y /
+            (
+              event.clientY -
+              rect.top
+            ) /
             rect.height;
 
 
-
           const rotateY =
-            (px - .5) * 7;
-
+            (px - .5) * 6;
 
 
           const rotateX =
-            (.5 - py) * 5;
-
+            (.5 - py) * 4;
 
 
           visual.style.setProperty(
@@ -2834,19 +2846,16 @@
           );
 
 
-
           visual.style.setProperty(
             "--hprx",
             rotateX + "deg"
           );
 
 
-
           visual.style.setProperty(
             "--hpmx",
             (px * 100) + "%"
           );
-
 
 
           visual.style.setProperty(
@@ -2857,7 +2866,6 @@
 
         }
       );
-
 
 
       card.addEventListener(
@@ -2899,7 +2907,6 @@
 })();
 
 </script>
-
 
 
 </body>
