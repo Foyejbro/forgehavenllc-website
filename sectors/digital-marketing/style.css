@@ -399,18 +399,15 @@ body.modal-open{
 
 }
 /* =====================================================
-   PREMIUM DIGITAL MARKETING CAMPAIGN
+   PREMIUM DIGITAL MARKETING CAMPAIGN — CLEAN VERSION
 ===================================================== */
 
 .dm-campaign{
   position:relative;
   overflow:hidden;
-  padding:130px 0 140px;
+  padding:120px 0 130px;
   background:#09090c;
 }
-
-
-/* subtle premium background */
 
 .dm-campaign::before{
   content:"";
@@ -418,17 +415,17 @@ body.modal-open{
   width:700px;
   height:700px;
   left:50%;
-  top:48%;
+  top:52%;
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:
     radial-gradient(
       circle,
-      rgba(105,74,190,.13) 0%,
+      rgba(105,74,190,.12) 0%,
       rgba(105,74,190,.04) 42%,
-      transparent 70%
+      transparent 72%
     );
-  filter:blur(45px);
+  filter:blur(55px);
   pointer-events:none;
 }
 
@@ -440,13 +437,13 @@ body.modal-open{
 .dm-campaign-head{
   position:relative;
   z-index:2;
-  max-width:850px;
-  margin:0 auto 70px;
+  max-width:860px;
+  margin:0 auto 58px;
   text-align:center;
 }
 
 .dm-campaign-head h2{
-  margin:18px 0 20px;
+  margin:18px 0 18px;
 }
 
 .dm-campaign-head h2 span{
@@ -457,7 +454,7 @@ body.modal-open{
   max-width:650px;
   margin:0 auto;
   color:var(--muted);
-  line-height:1.75;
+  line-height:1.7;
 }
 
 
@@ -474,17 +471,14 @@ body.modal-open{
 
 .dm-poster-shell{
   position:relative;
-
   width:min(820px,88vw);
-
   display:flex;
   justify-content:center;
-
   perspective:1400px;
 }
 
 
-/* ambient glow */
+/* glow */
 
 .dm-poster-glow{
   position:absolute;
@@ -493,112 +487,83 @@ body.modal-open{
   background:
     radial-gradient(
       circle,
-      rgba(93,237,57,.14),
-      rgba(105,74,190,.10) 45%,
+      rgba(93,237,57,.12),
+      rgba(105,74,190,.08) 45%,
       transparent 72%
     );
 
   filter:blur(80px);
-  opacity:0;
-
-  transform:scale(.75);
+  opacity:.55;
+  transform:scale(.92);
 
   transition:
-    opacity 1.1s ease,
-    transform 1.4s cubic-bezier(.16,1,.3,1);
+    opacity 1s ease,
+    transform 1.2s cubic-bezier(.16,1,.3,1);
 }
 
 
-/* actual poster */
+/* poster */
 
 .dm-poster-reveal{
   position:relative;
-
   width:100%;
-
-  border-radius:30px;
   overflow:hidden;
+
+  border-radius:28px;
 
   background:#111;
 
   box-shadow:
-    0 50px 120px rgba(0,0,0,.52),
+    0 45px 110px rgba(0,0,0,.48),
     0 0 0 1px rgba(255,255,255,.06);
 
-  opacity:0;
+  opacity:1;
 
   transform:
-    translateY(75px)
-    scale(.93)
-    rotateX(5deg);
-
-  /*
-     IMPORTANT:
-     প্রথমে শুধু image-এর center show হবে।
-     তাই person + laptop area আগে দেখা যাবে।
-  */
+    translateY(35px)
+    scale(.96);
 
   clip-path:
     inset(
-      0 31% 0 31%
-      round 30px
+      0 28% 0 28%
+      round 28px
     );
 
   transition:
-    opacity .9s ease,
-    transform 1.25s cubic-bezier(.16,1,.3,1),
-    clip-path 1.45s cubic-bezier(.76,0,.24,1);
+    transform 1.2s cubic-bezier(.16,1,.3,1),
+    clip-path 1.35s cubic-bezier(.76,0,.24,1);
 }
 
 .dm-poster-reveal img{
   display:block;
-
   width:100%;
   height:auto;
-
   aspect-ratio:1 / 1;
   object-fit:cover;
 
-  transform:scale(1.035);
+  transform:scale(1.025);
 
   transition:
-    transform 1.7s cubic-bezier(.16,1,.3,1);
+    transform 1.5s cubic-bezier(.16,1,.3,1);
 }
 
 
-/* =====================================================
-   WHEN SECTION BECOMES ACTIVE
-===================================================== */
+/* active state */
 
 .dm-campaign.is-active .dm-poster-reveal{
-  opacity:1;
-
   transform:
     translateY(0)
-    scale(1)
-    rotateX(0);
-
-  /*
-     delay থাকার কারণে
-     প্রথমে middle visual,
-     তারপর দুই পাশের লেখা।
-  */
+    scale(1);
 
   clip-path:
     inset(
       0 0 0 0
-      round 30px
+      round 28px
     );
-
-  transition-delay:
-    0s,
-    0s,
-    .52s;
 }
 
 .dm-campaign.is-active .dm-poster-reveal img{
   transform:scale(1);
-  transition-delay:.25s;
 }
 
 .dm-campaign.is-active .dm-poster-glow{
@@ -608,7 +573,7 @@ body.modal-open{
 
 
 /* =====================================================
-   SMALL FLOATING LABELS
+   FLOATING LABELS
 ===================================================== */
 
 .dm-stage-label{
@@ -621,13 +586,10 @@ body.modal-open{
 
   padding:10px 14px;
 
-  border:
-    1px solid rgba(255,255,255,.09);
-
+  border:1px solid rgba(255,255,255,.09);
   border-radius:999px;
 
-  background:
-    rgba(13,13,17,.72);
+  background:rgba(13,13,17,.72);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -644,64 +606,47 @@ body.modal-open{
 
 .dm-stage-label span{
   color:var(--green);
-
   font-size:10px;
   font-weight:800;
-
   letter-spacing:.12em;
 }
 
 .dm-stage-label p{
   margin:0;
-
   color:#fff;
-
   font-size:11px;
   font-weight:650;
-
   letter-spacing:.06em;
   text-transform:uppercase;
 }
 
-
 .dm-stage-label-left{
   left:-55px;
   top:25%;
-
-  transform:
-    translateX(-25px)
-    translateY(10px);
+  transform:translateX(-20px);
 }
-
 
 .dm-stage-label-right{
   right:-70px;
   bottom:27%;
-
-  transform:
-    translateX(25px)
-    translateY(10px);
+  transform:translateX(20px);
 }
-
 
 .dm-campaign.is-active .dm-stage-label-left{
   opacity:1;
   transform:none;
-
-  transition-delay:1.45s;
+  transition-delay:1.05s;
 }
-
 
 .dm-campaign.is-active .dm-stage-label-right{
   opacity:1;
   transform:none;
-
-  transition-delay:1.65s;
+  transition-delay:1.25s;
 }
 
 
 /* =====================================================
-   BOTTOM CONTENT
+   BOTTOM META + CTA
 ===================================================== */
 
 .dm-campaign-bottom{
@@ -710,38 +655,32 @@ body.modal-open{
 
   width:min(100%,1100px);
 
-  margin:52px auto 0;
+  margin:46px auto 0;
+  padding-top:24px;
 
-  padding-top:25px;
-
-  border-top:
-    1px solid rgba(255,255,255,.09);
+  border-top:1px solid rgba(255,255,255,.09);
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  gap:25px;
+  gap:24px;
 
   opacity:0;
-
-  transform:translateY(25px);
+  transform:translateY(20px);
 
   transition:
     opacity .8s ease,
-    transform 1s cubic-bezier(.16,1,.3,1);
+    transform .9s cubic-bezier(.16,1,.3,1);
 }
-
 
 .dm-campaign.is-active .dm-campaign-bottom{
   opacity:1;
   transform:none;
-
-  transition-delay:1.75s;
+  transition-delay:1.35s;
 }
 
 
-/* meta text */
+/* meta */
 
 .dm-campaign-meta{
   display:flex;
@@ -756,7 +695,6 @@ body.modal-open{
 
   font-size:10px;
   font-weight:700;
-
   letter-spacing:.12em;
 }
 
@@ -764,7 +702,6 @@ body.modal-open{
   content:"";
 
   position:absolute;
-
   right:-12px;
   top:50%;
 
@@ -779,7 +716,7 @@ body.modal-open{
 }
 
 
-/* actions */
+/* buttons */
 
 .dm-campaign-actions{
   display:flex;
@@ -789,13 +726,13 @@ body.modal-open{
 
 
 /* =====================================================
-   DESKTOP HOVER
+   HOVER
 ===================================================== */
 
 @media(hover:hover){
 
-  .dm-poster-reveal:hover img{
-    transform:scale(1.018);
+  .dm-campaign.is-active .dm-poster-reveal:hover img{
+    transform:scale(1.015);
   }
 
 }
@@ -808,23 +745,23 @@ body.modal-open{
 @media(max-width:1000px){
 
   .dm-campaign{
-    padding:105px 0;
+    padding:95px 0 105px;
   }
 
   .dm-campaign-head{
-    margin-bottom:50px;
+    margin-bottom:46px;
   }
 
   .dm-poster-shell{
-    width:min(780px,92vw);
+    width:min(760px,92vw);
   }
 
   .dm-stage-label-left{
-    left:15px;
+    left:14px;
   }
 
   .dm-stage-label-right{
-    right:15px;
+    right:14px;
   }
 
   .dm-campaign-bottom{
@@ -842,11 +779,11 @@ body.modal-open{
 @media(max-width:680px){
 
   .dm-campaign{
-    padding:78px 0 82px;
+    padding:74px 0 80px;
   }
 
   .dm-campaign-head{
-    margin-bottom:38px;
+    margin-bottom:34px;
     text-align:left;
   }
 
@@ -859,12 +796,12 @@ body.modal-open{
   }
 
   .dm-poster-reveal{
-    border-radius:20px;
+    border-radius:18px;
 
     clip-path:
       inset(
-        0 25% 0 25%
-        round 20px
+        0 22% 0 22%
+        round 18px
       );
   }
 
@@ -872,7 +809,7 @@ body.modal-open{
     clip-path:
       inset(
         0 0 0 0
-        round 20px
+        round 18px
       );
   }
 
@@ -881,12 +818,12 @@ body.modal-open{
   }
 
   .dm-campaign-bottom{
-    margin-top:32px;
-    padding-top:20px;
+    margin-top:30px;
+    padding-top:18px;
   }
 
   .dm-campaign-meta{
-    gap:8px 17px;
+    gap:8px 16px;
   }
 
   .dm-campaign-meta span{
@@ -918,6 +855,17 @@ body.modal-open{
   .dm-stage-label,
   .dm-campaign-bottom{
     transition:none !important;
+  }
+
+  .dm-poster-reveal{
+    transform:none !important;
+    clip-path:none !important;
+  }
+
+  .dm-stage-label,
+  .dm-campaign-bottom{
+    opacity:1 !important;
+    transform:none !important;
   }
 
 }
