@@ -200,46 +200,56 @@ document.addEventListener("keydown", event => {
 
 });
 /* =====================================================
-   DIGITAL MARKETING PREMIUM POSTER REVEAL
+   FACEBOOK MARKETING SHOWCASE ANIMATION
 ===================================================== */
 
 (() => {
 
-  const section = document.querySelector(".dm-campaign");
+  const section =
+    document.querySelector(".dm-showcase");
 
   if (!section) return;
 
 
   const reduceMotion =
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
 
   if (reduceMotion) {
+
     section.classList.add("is-active");
+
     return;
+
   }
 
 
-  const observer = new IntersectionObserver(
-    entries => {
+  const observer =
+    new IntersectionObserver(
 
-      entries.forEach(entry => {
+      entries => {
 
-        if (entry.isIntersecting) {
+        entries.forEach(entry => {
 
-          section.classList.add("is-active");
+          if (entry.isIntersecting) {
 
-          observer.unobserve(section);
+            section.classList.add("is-active");
 
-        }
+            observer.unobserve(section);
 
-      });
+          }
 
-    },
-    {
-      threshold:0.28
-    }
-  );
+        });
+
+      },
+
+      {
+        threshold:0.20
+      }
+
+    );
 
 
   observer.observe(section);
