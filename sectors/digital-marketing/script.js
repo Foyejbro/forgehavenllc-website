@@ -199,3 +199,49 @@ document.addEventListener("keydown", event => {
   }
 
 });
+/* =====================================================
+   DIGITAL MARKETING PREMIUM POSTER REVEAL
+===================================================== */
+
+(() => {
+
+  const section = document.querySelector(".dm-campaign");
+
+  if (!section) return;
+
+
+  const reduceMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+  if (reduceMotion) {
+    section.classList.add("is-active");
+    return;
+  }
+
+
+  const observer = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          section.classList.add("is-active");
+
+          observer.unobserve(section);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:0.28
+    }
+  );
+
+
+  observer.observe(section);
+
+})();
