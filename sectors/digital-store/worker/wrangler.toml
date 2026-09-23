@@ -12,8 +12,8 @@ RELAY_INSTRUCTIONS = "Contact support@forgehavenllc.org with your order ID to re
 
 [[d1_databases]]
 binding = "DB"
-database_name = "forge-haven-store"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_name = "digital-store"
+database_id = "cba88bf3-7d90-406f-944f-5eade8f4c872"
 
 [[r2_buckets]]
 binding = "FILES"
