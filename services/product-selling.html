@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Selling | Forge Haven LLC</title>
   <link rel="canonical" href="https://forgehavenllc.org/services/product-selling.html">
-  <!-- ===== FAVICON / SEARCH PREVIEW ===== -->
+
   <link rel="icon" type="image/png" sizes="32x32" href="../images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/brand/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/brand/apple-touch-icon.png">
@@ -32,9 +32,11 @@
     "logo": "https://forgehavenllc.org/images/brand/og-image.png"
   }
   </script>
+
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <canvas id="waterCanvas"></canvas>
 
@@ -48,8 +50,16 @@
   </div>
 
   <header class="header">
-    <div class="logo"><a href="../index.html" aria-label="Forge Haven Home"><img src="../images/brand/logo.png" alt="Forge Haven" class="logo-img"></a></div>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    <div class="logo">
+      <a href="../index.html" aria-label="Forge Haven Home">
+        <img src="../images/brand/logo.png" alt="Forge Haven" class="logo-img">
+      </a>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
     <nav class="nav always-show" id="navMenu">
       <a href="../index.html">Home</a>
       <a href="../services.html" class="active">Capabilities</a>
@@ -57,22 +67,44 @@
     </nav>
   </header>
 
- <section class="page-hero">
-  <h1>Product Selling</h1>
-  <p>Product sales & delivery support system.</p>
+  <section class="page-hero">
+    <h1>Product Selling</h1>
+    <p>Product sales, delivery support, and ready-to-buy digital assets.</p>
 
-  <div class="buttons" style="margin-top:18px;">
-    <a class="btn outline" href="../services.html">← Back</a>
-    <a class="btn" href="#order">Discuss Project</a>
-    <a class="btn outline" href="boosting-dollar-support.html">Next →</a>
-  </div>
-</section>
+    <div class="buttons" style="margin-top:18px;">
+      <a class="btn outline" href="../services.html">← Back</a>
+      <a class="btn" href="https://store.forgehavenllc.org">Visit Digital Store →</a>
+      <a class="btn outline" href="#order">Discuss Project</a>
+      <a class="btn outline" href="boosting-dollar-support.html">Next →</a>
+    </div>
+  </section>
 
   <section class="services-page">
     <div class="service-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      <div class="card"><i class="fa-solid fa-box"></i><h3>Setup</h3><p>Product listing structure + pricing + offer ideas.</p></div>
-      <div class="card"><i class="fa-solid fa-comments"></i><h3>Orders</h3><p>Order taking flow + WhatsApp script + customer handling.</p></div>
-      <div class="card"><i class="fa-solid fa-truck-fast"></i><h3>Delivery</h3><p>Courier workflow + tracking + packaging guideline.</p></div>
+      <div class="card">
+        <i class="fa-solid fa-store"></i>
+        <h3>Digital Store</h3>
+        <p>Buy logo concepts, licensed photos, graphics, stock assets, and PSD files.</p>
+        <a class="btn small" href="https://store.forgehavenllc.org">Open Store</a>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-box"></i>
+        <h3>Setup</h3>
+        <p>Product listing structure, pricing, and offer ideas.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Orders</h3>
+        <p>Order-taking flow, WhatsApp script, and customer handling.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h3>Delivery</h3>
+        <p>Courier workflow, tracking, and packaging guideline.</p>
+      </div>
     </div>
 
     <div class="card" id="order" style="margin-top:22px;">
@@ -92,7 +124,7 @@
         <input id="details" type="text" placeholder="Short requirements" />
       </div>
 
-      <a id="waBtn" class="btn" target="_blank" style="margin-top:14px;display:inline-block;"
+      <a id="waBtn" class="btn" target="_blank" rel="noopener" style="margin-top:14px;display:inline-block;"
          href="https://wa.me/8801639444747?text=Hi%20Forge%20Haven,%20I%20want%20Product%20Selling%20Support.%0A%0AName:%20%0AProduct:%20%0ABudget:%20%0AArea:%20%0ARequirements:%20">
         Send Inquiry on WhatsApp
       </a>
@@ -101,18 +133,25 @@
 
   <script src="../js/app.js"></script>
   <script>
-    const waBtn=document.getElementById("waBtn");
-    function u(){
-      const name=encodeURIComponent(document.getElementById("name").value||"");
-      const product=encodeURIComponent(document.getElementById("product").value||"");
-      const budget=encodeURIComponent(document.getElementById("budget").value||"");
-      const area=encodeURIComponent(document.getElementById("area").value||"");
-      const details=encodeURIComponent(document.getElementById("details").value||"");
-      const text=`Hi Forge Haven, I want Product Selling Support.%0A%0AName: ${name}%0AProduct: ${product}%0ABudget: ${budget}%0AArea: ${area}%0ARequirements: ${details}`;
-      waBtn.href=`https://wa.me/8801639444747?text=${text}`;
+    const waBtn = document.getElementById("waBtn");
+
+    function updateWhatsAppLink() {
+      const name = encodeURIComponent(document.getElementById("name").value || "");
+      const product = encodeURIComponent(document.getElementById("product").value || "");
+      const budget = encodeURIComponent(document.getElementById("budget").value || "");
+      const area = encodeURIComponent(document.getElementById("area").value || "");
+      const details = encodeURIComponent(document.getElementById("details").value || "");
+
+      const text = `Hi Forge Haven, I want Product Selling Support.%0A%0AName: ${name}%0AProduct: ${product}%0ABudget: ${budget}%0AArea: ${area}%0ARequirements: ${details}`;
+
+      waBtn.href = `https://wa.me/8801639444747?text=${text}`;
     }
-    ["name","product","budget","area","details"].forEach(id=>document.getElementById(id).addEventListener("input",u));
-    u();
+
+    ["name", "product", "budget", "area", "details"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", updateWhatsAppLink);
+    });
+
+    updateWhatsAppLink();
   </script>
 </body>
 </html>
