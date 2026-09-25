@@ -16,6 +16,66 @@ async function orderAuth(r,env,id){const o=await one(env,'SELECT * FROM orders W
 async function limit(r,env){const ip=r.headers.get('CF-Connecting-IP')||'local',slot=Math.floor(Date.now()/3600000),key=await hash(ip+slot);await run(env,'DELETE FROM rate_limits WHERE expires < ?',Date.now());const hit=await env.DB.prepare('INSERT INTO rate_limits(key,count,expires) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET count=count+1 RETURNING count').bind(key,Date.now()+3600000).first();if(hit.count>30)fail('Too many orders. Please try again later.',429)}
 function safeLink(s){if(!s)return '';try{const u=new URL(s);if(u.protocol==='https:')return u.href}catch{}fail('A valid HTTPS URL is required')}
 function text(s,max=2000){return String(s||'').trim().slice(0,max)}
+const html=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function productPage(p){
+  const publicProduct={...p};
+  delete publicProduct.file_key;
+
+  const products=JSON.stringify([publicProduct]).replace(/</g,'\\u003c');
+  const money=(p.price/100).toFixed(2);
+
+  return new Response(`<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${html(p.title)} | Forge Haven LLC</title>
+<meta name="description" content="${html(p.description)}">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="/assets/forge-haven-logo.png">
+<script>window.INITIAL_PRODUCTS=${products}</script>
+<script src="/config.js" defer></script>
+<script src="/app.js" defer></script>
+<script src="/motion.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="/assets/forge-haven-logo.png" alt="Forge Haven LLC logo"></a>
+    <nav><a href="/">Home</a><a href="/#products">Products</a></nav>
+    <div class="nav-actions">
+      <button data-action="purchases">My purchases</button>
+      <button data-action="cart">Cart <span id="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <p class="muted"><a href="/">Home</a> / ${html(p.category)} / ${html(p.title)}</p>
+    <section class="product-detail">
+      <div class="art"><img src="${html(p.preview)}" alt="${html(p.title)} preview"></div>
+      <div>
+        <span class="eyebrow">${html(p.category)} · ${p.delivery==='custom'?'CUSTOM ORDER':'DIGITAL DOWNLOAD'}</span>
+        <h1>${html(p.title)}</h1>
+        <p>${html(p.description)}</p>
+        <p>${html(p.format)}</p>
+        <div class="price">$${money} <small class="muted">USD</small></div>
+        <button class="primary full" data-add="${html(p.id)}">${p.delivery==='custom'?'Customize & order':'Add to cart'}</button>
+        <p class="note"><strong>NON-REFUNDABLE.</strong> <a class="link" href="/policies/">Read policy</a></p>
+        <h3>License included</h3>
+        <p>${html(p.license)}</p>
+      </div>
+    </section>
+  </div>
+</main>
+<dialog id="modal"><button class="close">×</button><div id="modal-content"></div></dialog>
+<div id="toast"></div>
+</body>
+</html>`,{
+    headers:{'Content-Type':'text/html; charset=UTF-8','Cache-Control':'no-store'}
+  });
+}
 export function validateProduct(p){if(!/^[a-z0-9-]{1,80}$/.test(p.id))fail('Use a lowercase product ID with hyphens');if(!['Logo','Photograph','Graphic Design','Stock','PSD'].includes(p.category))fail('Invalid category');if(!Number.isSafeInteger(p.price)||p.price<50||p.price>10000000)fail('Invalid price (USD cents)');if(!['custom','instant'].includes(p.delivery)||!p.title||!p.description||!p.license)fail('Complete all product details');if(p.category==='Logo'&&p.delivery!=='custom')fail('Logo orders must be custom');if(p.active&&(!p.preview||(p.delivery==='instant'&&!p.file_key)))fail('Active products require a preview and instant products require a private file');if(p.preview)safeLink(p.preview);return p}
 async function route(r,env){const u=new URL(r.url),path=u.pathname,method=r.method;
 if(path==='/api/catalog'&&method==='GET'){const products=(await catalog(env)).map(({file_key,...p})=>p);const b=await one(env,"SELECT value FROM settings WHERE key='banner'");return json({products,banner:b?JSON.parse(b.value):null})}
@@ -30,5 +90,16 @@ if(action.startsWith('download/')&&method==='GET'){if(o.status!=='paid')fail('Pa
 if(path.startsWith('/api/admin/')){const token=(r.headers.get('Authorization')||'').replace(/^Bearer /,'');if(!env.ADMIN_TOKEN||env.ADMIN_TOKEN.length<32||!equal(token,env.ADMIN_TOKEN))fail('Unauthorized',401);const action=path.slice(11);if(action==='data'&&method==='GET')return json({products:await catalog(env),orders:await all(env,'SELECT id,name,email,method,status,total,items,payment_reference,received_reference,relay_url,created_at FROM orders ORDER BY created_at DESC LIMIT 200'),reviews:await all(env,'SELECT * FROM reviews ORDER BY created_at DESC LIMIT 200')});if(action==='product'&&method==='POST'){const p=validateProduct(await body(r));if(p.active&&p.delivery==='instant'&&!await env.FILES.head(p.file_key))fail('Upload the file to R2 first');await run(env,'INSERT INTO products(id,data) VALUES(?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data',p.id,JSON.stringify(p));return json({ok:true})}if(action==='banner'&&method==='POST'){const b=await body(r);b.url=safeLink(b.url);if(b.image)b.image=safeLink(b.image);await run(env,"INSERT INTO settings(key,value) VALUES('banner',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",JSON.stringify(b));return json({ok:true})}if(action==='order'&&method==='POST'){const d=await body(r),o=await one(env,'SELECT * FROM orders WHERE id=?',d.id);if(!o)fail('Order not found',404);if(d.action==='relay-link'){if(o.method!=='relay'||o.status!=='pending')fail('Only pending Relay orders');const link=safeLink(d.url);await run(env,'UPDATE orders SET relay_url=? WHERE id=?',link,o.id);await event(env,o.id,'relay_request_added',{url:link})}else if(d.action==='confirm-relay'){if(o.method!=='relay'||o.status!=='pending'||!text(d.reference,200))fail('Verify received funds and enter transaction reference');await run(env,"UPDATE orders SET status='paid',received_reference=? WHERE id=? AND status='pending'",text(d.reference,200),o.id);await event(env,o.id,'admin_relay_verified',{reference:text(d.reference,200)})}else if(d.action==='deliver'){if(o.status!=='paid')fail('Payment must be confirmed first');const items=JSON.parse(o.items),p=items.find(x=>x.id===d.productId&&x.delivery==='custom');if(!p||!d.fileKey||!await env.FILES.head(d.fileKey))fail('Upload the custom file to R2 first');p.file_key=text(d.fileKey,500);p.ready=true;await run(env,'UPDATE orders SET items=? WHERE id=?',JSON.stringify(items),o.id);await event(env,o.id,'custom_delivered',{productId:p.id,key:p.file_key})}else if(d.action==='revoke'){await run(env,"UPDATE orders SET status='revoked' WHERE id=?",o.id);await event(env,o.id,'access_revoked',{reason:text(d.reason)})}else fail('Unknown order action');return json({ok:true})}if(action==='review'&&method==='POST'){const d=await body(r);await run(env,'UPDATE reviews SET approved=? WHERE order_id=? AND product_id=?',d.approved?1:0,d.orderId,d.productId);return json({ok:true})}if(action.startsWith('evidence/')&&method==='GET'){const id=action.slice(9),o=await one(env,'SELECT * FROM orders WHERE id=?',id);if(!o)fail('Not found',404);delete o.token_hash;return json({order:o,events:await all(env,'SELECT * FROM events WHERE order_id=? ORDER BY id',id)})}fail('Not found',404)}
 fail('Not found',404)}
 export default {async fetch(r,env){const path=new URL(r.url).pathname;
-if(!path.startsWith('/api/')) return env.ASSETS.fetch(r);
+if(!path.startsWith('/api/')){
+  const match=path.match(/^\/products\/([a-z0-9-]+)\/?$/);
+
+  if(match&&r.method==='GET'){
+    try{
+      const p=(await catalog(env)).find(x=>x.id===match[1]);
+      if(p?.active)return productPage(p);
+    }catch{}
+  }
+
+  return env.ASSETS.fetch(r);
+}
 const origin=r.headers.get('Origin');let response;try{if(origin&&origin!==env.STORE_ORIGIN)fail('Origin not allowed',403);if(r.method==='OPTIONS')response=new Response(null,{status:204});else response=await route(r,env)}catch(e){response=json({error:e.status?e.message:'Server error. Please contact support.'},e.status||500)}const h=new Headers(response.headers);h.set('Cache-Control','no-store');h.set('X-Content-Type-Options','nosniff');h.set('Referrer-Policy','no-referrer');if(origin===env.STORE_ORIGIN){h.set('Access-Control-Allow-Origin',origin);h.set('Vary','Origin');h.set('Access-Control-Allow-Headers','Content-Type, Authorization');h.set('Access-Control-Allow-Methods','GET,POST,OPTIONS');h.set('Access-Control-Expose-Headers','Content-Disposition')}return new Response(response.body,{status:response.status,headers:h})}};
