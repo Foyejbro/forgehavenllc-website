@@ -332,8 +332,8 @@ const profileData = {
     role:
       "Digital Marketing Executive",
 
-    image:
-      "../../images/moriom-akter-sweety.png",
+image:
+  "assets/moriom-akter-sweety.png",
 
     education:
       "Honours 1st Year (2026–Present) · University of Liberal Arts Bangladesh (ULAB) · ESS Department",
