@@ -763,3 +763,16 @@ document.addEventListener(
   observer.observe(section);
 
 })();
+/* =====================================================
+   OPEN TEAM PROFILE FROM HOMEPAGE
+===================================================== */
+
+const requestedProfile =
+  new URLSearchParams(window.location.search).get("profile");
+
+if (
+  requestedProfile &&
+  profileData[requestedProfile]
+) {
+  openProfile(requestedProfile);
+}
