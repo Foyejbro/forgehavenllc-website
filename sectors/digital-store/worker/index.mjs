@@ -1098,19 +1098,21 @@ async function route(r,env){
 
             payment_source:{
               paypal:{
-                experience_context:{
-                  brand_name:'Forge Haven LLC',
-                  user_action:'PAY_NOW',
+               experience_context:{
+  brand_name:'Forge Haven LLC',
+  user_action:'PAY_NOW',
+  landing_page:'GUEST_CHECKOUT',
 
-                  return_url:
-                    env.STORE_ORIGIN+
-                    '/?paypal=return&order='+
-                    encodeURIComponent(id),
+  return_url:
+    env.STORE_ORIGIN+
+    '/?paypal=return&order='+
+    encodeURIComponent(id),
 
-                  cancel_url:
-                    env.STORE_ORIGIN+
-                    '/?order='+
-                    encodeURIComponent(id)
+  cancel_url:
+    env.STORE_ORIGIN+
+    '/?order='+
+    encodeURIComponent(id)
+}
                 }
               }
             }
